@@ -8,35 +8,77 @@ export const UserPage = () => {
     const [isSignUp, setIsSignUp] = useState(true);
 
     return (
-
         <div className="user-page">
 
-            <div className={`toggle-container ${!isSignUp ? "login" : ""}`}>
+            <div className="auth-layout">
 
-                <button
-                    className={`toggle-btn ${isSignUp ? "active" : ""}`}
-                    onClick={() => setIsSignUp(true)}
-                >
-                    Sign Up
-                </button>
+                {/* ================= TOGGLE ================= */}
 
-                <button
-                    className={`toggle-btn ${!isSignUp ? "active" : ""}`}
-                    onClick={() => setIsSignUp(false)}
+                <div className="toggle-container">
+
+                    <button
+                        type="button"
+                        className={`toggle-btn ${
+                            isSignUp ? "active" : ""
+                        }`}
+                        onClick={() => setIsSignUp(true)}
+                    >
+                        Sign Up
+                    </button>
+
+                    <button
+                        type="button"
+                        className={`toggle-btn ${
+                            !isSignUp ? "active" : ""
+                        }`}
+                        onClick={() => setIsSignUp(false)}
+                    >
+                        Login
+                    </button>
+
+                </div>
+
+
+                {/* ================= FLIP CARD ================= */}
+
+                <div
+                    className={`auth-scene ${
+                        isSignUp
+                            ? "show-signup"
+                            : "show-login"
+                    }`}
                 >
-                    Login
-                </button>
+
+                    <div className="auth-card">
+
+                        {/* ================= SIGN UP ================= */}
+
+                        <div className="auth-face signup-face">
+
+                            <SignUp
+                                setIsSignUp={setIsSignUp}
+                            />
+
+                        </div>
+
+
+                        {/* ================= LOGIN ================= */}
+
+                        <div className="auth-face login-face">
+
+                            <Login
+                                setIsSignUp={setIsSignUp}
+                            />
+
+                        </div>
+
+                    </div>
+
+                </div>
 
             </div>
 
-            {
-                isSignUp
-                    ? <SignUp setIsSignUp={setIsSignUp} />
-                    : <Login setIsSignUp={setIsSignUp} />
-            }
-
         </div>
-
     );
 };
 

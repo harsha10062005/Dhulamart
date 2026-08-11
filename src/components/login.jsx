@@ -37,44 +37,61 @@ const Login = ({ setIsSignUp }) => {
         setSuccess(false);
 
         if (!email && !password) {
+
             setErr("Please fill all the details.");
+
             return;
         }
 
         if (!email) {
+
             setErr("Please enter your email.");
+
             return;
         }
 
         if (!password) {
+
             setErr("Please enter your password.");
+
             return;
         }
 
         let data = localStorage.getItem("user");
 
         if (!data) {
-            setErr("No account found. Please Sign Up first.");
+
+            setErr(
+                "No account found. Please Sign Up first."
+            );
+
             return;
         }
 
         let user = JSON.parse(data);
 
         if (email.trim() !== user.email) {
+
             setErr("Please enter a valid email.");
+
             return;
         }
 
         if (password !== user.password) {
+
             setErr("Please enter a valid password.");
+
             return;
         }
 
         setSuccess(true);
+
         setErr("Login Successful!");
 
         setTimeout(() => {
+
             navigate("/");
+
         }, 1000);
     }
 
@@ -84,13 +101,15 @@ const Login = ({ setIsSignUp }) => {
 
             <div className="login-container">
 
-                <h2>Login</h2>
-
                 <form onSubmit={validation}>
+
+                    <h2>Login</h2>
 
                     <div className="input-group">
 
-                        <label>Email</label>
+                        <label>
+                            Email
+                        </label>
 
                         <input
                             type="email"
@@ -102,9 +121,12 @@ const Login = ({ setIsSignUp }) => {
 
                     </div>
 
+
                     <div className="input-group">
 
-                        <label>Password</label>
+                        <label>
+                            Password
+                        </label>
 
                         <input
                             type="password"
@@ -116,12 +138,19 @@ const Login = ({ setIsSignUp }) => {
 
                     </div>
 
+
                     <div className="options">
 
                         <label>
-                            <input type="checkbox" />
+
+                            <input
+                                type="checkbox"
+                            />
+
                             Remember Me
+
                         </label>
+
 
                         <a
                             href="/"
@@ -132,12 +161,14 @@ const Login = ({ setIsSignUp }) => {
 
                     </div>
 
+
                     <button
                         className="login-btn"
                         type="submit"
                     >
                         Login
                     </button>
+
 
                     <p className="signup">
 
@@ -146,8 +177,11 @@ const Login = ({ setIsSignUp }) => {
                         <a
                             href="/"
                             onClick={(e) => {
+
                                 e.preventDefault();
+
                                 setIsSignUp(true);
+
                             }}
                         >
                             Sign Up
@@ -155,11 +189,30 @@ const Login = ({ setIsSignUp }) => {
 
                     </p>
 
+
                     {
                         err && (
-                            <p className={success ? "login-success" : "login-error"}>
-                                {err}
-                            </p>
+
+                            <div
+                                className={
+                                    success
+                                        ? "login-success"
+                                        : "login-error"
+                                }
+                            >
+
+                                <h3>
+                                    {success
+                                        ? "Success"
+                                        : "Validation Error"}
+                                </h3>
+
+                                <p>
+                                    {err}
+                                </p>
+
+                            </div>
+
                         )
                     }
 
@@ -170,4 +223,5 @@ const Login = ({ setIsSignUp }) => {
         </div>
     );
 };
+
 export default Login;
