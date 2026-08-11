@@ -12,62 +12,39 @@ export const ProductDetails = () => {
     const [load, setLoad] = useState(true);
 
     useEffect(() => {
-
         async function getProduct() {
+            let response = await axios.get(
+                `https://dummyjson.com/products/${id}`
+            );
 
-            try {
-
-                const response = await axios.get(
-                    `https://dummyjson.com/products/${id}`
-                );
-
-                setTimeout(() => {
-
-                    setProduct(response.data);
-                    setLoad(false);
-
-                }, 2000);
-
-            } catch (error) {
-
-                console.log(error);
+            setTimeout(() => {
+                setProduct(response.data);
                 setLoad(false);
-
-            }
+            }, 2000);
 
         }
-
         getProduct();
-
     }, [id]);
 
 
     if (load) {
-
         return (
             <div className="product-details-page">
                 <Loading />
             </div>
         );
-
     }
 
 
     return (
-
         <div className="product-details-page">
-
             <div className="product-details-container">
-
                 <div className="product-image">
-
                     <img
                         src={product.thumbnail}
                         alt={product.title}
                     />
-
                 </div>
-
 
                 <div className="product-content">
 
@@ -107,7 +84,6 @@ export const ProductDetails = () => {
                             <span>Category</span>
                             {product.category}
                         </p>
-
                     </div>
 
                     <div className="product-buttons">
@@ -119,17 +95,11 @@ export const ProductDetails = () => {
                         <button className="cart-btn">
                             Add to Cart
                         </button>
-
                     </div>
-
                 </div>
-
             </div>
-
         </div>
-
     );
-
 };
 
 export default ProductDetails;
