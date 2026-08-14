@@ -1,4 +1,4 @@
-import "../css/products.css";
+import "../css/Products.css";
 import { Loader } from "../Loaders/loader";
 import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
