@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { ProductsCards } from "./productsCard";
-import "../css/products.css";
+import "../css/Products.css";
 import { motion, AnimatePresence } from "framer-motion";
 
 export const Products = () => {

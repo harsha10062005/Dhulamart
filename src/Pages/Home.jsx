@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { Header } from "../components/Header";
+import { Header } from "../components/header";
 import "../css/Home.css";
 
 import mart from "../assets/Dhulamart.png";
