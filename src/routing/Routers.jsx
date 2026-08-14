@@ -11,7 +11,7 @@ import ProductDetails from "../Pages/ProductDetails.jsx"
 export const Router = () => {
     return (
         <>
-
+            
             <Routes>
                 <Route
                     path="/"
@@ -41,9 +41,6 @@ export const Router = () => {
                     path="/products/:id"
                     element ={<ProductDetails/>}
                 />
-                
-
-
             </Routes>
         </>
     )
