@@ -1,13 +1,26 @@
-/* =====================================================
+/* =========================================================
    DHULA MART FOOTER
-===================================================== */
+   CLEAN CLAUDE-STYLE FOOTER
+   ========================================================= */
 
 .dhula-footer {
+    position: relative;
+
     width: 100%;
 
-    background: #10182b;
+    margin-top: 80px;
 
-    color: #ffffff;
+    color: #e8e3dc;
+
+    background:
+        linear-gradient(
+            180deg,
+            #292622 0%,
+            #24211e 100%
+        );
+
+    border-top:
+        1px solid rgba(255, 255, 255, 0.08);
 
     font-family: "Inter", sans-serif;
 
@@ -15,32 +28,71 @@
 }
 
 
-/* =====================================================
-   TOP FOOTER
-===================================================== */
+/* =========================================================
+   TOP SUBTLE LINE
+   ========================================================= */
+
+.dhula-footer::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(217, 119, 87, 0.65),
+            transparent
+        );
+}
+
+
+/* =========================================================
+   FOOTER TOP
+   ========================================================= */
 
 .footer-top {
-    max-width: 1400px;
+    position: relative;
+
+    max-width: 1350px;
 
     margin: auto;
 
-    padding: 75px 7% 55px;
+    padding:
+        65px
+        clamp(25px, 5vw, 75px)
+        55px;
 
     display: grid;
 
-    grid-template-columns: 2fr 1fr 1fr 1.4fr;
+    grid-template-columns:
+        1.6fr
+        1fr
+        1fr
+        1.2fr;
 
     gap: 55px;
 }
 
 
-/* =====================================================
+/* =========================================================
    BRAND
-===================================================== */
+   ========================================================= */
 
 .footer-brand {
     max-width: 390px;
 }
+
+
+/* =========================================================
+   FOOTER LOGO
+   ========================================================= */
 
 .footer-logo {
     display: flex;
@@ -49,112 +101,161 @@
 
     gap: 13px;
 
-    margin-bottom: 22px;
+    margin-bottom: 18px;
 }
 
+
+/* Logo icon */
+
 .footer-logo-icon {
-    width: 52px;
-    height: 52px;
+    width: 44px;
+    height: 44px;
 
     display: flex;
 
     align-items: center;
     justify-content: center;
 
-    border-radius: 15px;
+    border-radius: 12px;
 
-    background: #2f65ff;
+    background:
+        rgba(217, 119, 87, 0.13);
 
-    font-size: 25px;
+    border:
+        1px solid rgba(217, 119, 87, 0.25);
 
-    box-shadow: 0 10px 25px rgba(47, 101, 255, 0.25);
+    font-size: 20px;
+
+    transition:
+        transform 0.35s ease,
+        background 0.3s ease;
 }
+
+
+.footer-logo-icon:hover {
+    transform:
+        translateY(-3px)
+        rotate(-5deg);
+
+    background:
+        rgba(217, 119, 87, 0.2);
+}
+
+
+/* =========================================================
+   BRAND TITLE
+   ========================================================= */
 
 .footer-logo h2 {
     margin: 0;
 
-    font-size: 22px;
+    color: #f4f0ea;
 
-    font-weight: 800;
+    font-size: 21px;
 
-    letter-spacing: -0.5px;
+    font-weight: 650;
+
+    letter-spacing: -0.04em;
 }
 
-.footer-logo div span {
+
+/* Tagline */
+
+.footer-logo div > span {
     display: block;
 
-    margin-top: 3px;
+    margin-top: 4px;
 
-    color: #6e96ff;
+    color: #b9b1a8;
 
     font-size: 8px;
 
-    font-weight: 800;
+    font-weight: 600;
 
-    letter-spacing: 1.5px;
+    letter-spacing: 0.16em;
 }
 
+
+/* =========================================================
+   BRAND DESCRIPTION
+   ========================================================= */
+
 .footer-brand > p {
-    margin-bottom: 25px;
+    max-width: 370px;
 
-    color: #aab3c5;
+    margin: 0 0 23px;
 
-    font-size: 13px;
+    color: #a9a199;
+
+    font-size: 12px;
 
     line-height: 1.8;
 }
 
 
-/* =====================================================
-   SOCIAL ICONS
-===================================================== */
+/* =========================================================
+   SOCIAL
+   ========================================================= */
 
 .footer-social {
     display: flex;
 
-    gap: 9px;
+    align-items: center;
+
+    gap: 8px;
 }
 
+
 .footer-social a {
-    width: 38px;
-    height: 38px;
+    width: 34px;
+    height: 34px;
 
     display: flex;
 
     align-items: center;
     justify-content: center;
 
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    border:
+        1px solid rgba(255, 255, 255, 0.1);
 
-    border-radius: 10px;
+    border-radius: 9px;
 
-    background: rgba(255, 255, 255, 0.05);
+    background:
+        rgba(255, 255, 255, 0.035);
 
-    color: #ffffff;
+    color: #aaa39b;
 
     text-decoration: none;
 
-    font-size: 13px;
+    font-size: 11px;
 
-    font-weight: 700;
+    font-weight: 600;
 
-    transition: all 0.3s ease;
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease;
 }
+
 
 .footer-social a:hover {
-    transform: translateY(-4px);
+    color: #ffffff;
 
-    background: #2f65ff;
+    background:
+        var(--orange);
 
-    border-color: #2f65ff;
+    border-color:
+        var(--orange);
 
-    box-shadow: 0 8px 20px rgba(47, 101, 255, 0.3);
+    transform:
+        translateY(-3px);
 }
 
 
-/* =====================================================
-   FOOTER COLUMNS
-===================================================== */
+/* =========================================================
+   COLUMNS
+   ========================================================= */
 
 .footer-column {
     display: flex;
@@ -164,17 +265,23 @@
     align-items: flex-start;
 }
 
+
+/* =========================================================
+   COLUMN TITLE
+   ========================================================= */
+
 .footer-column h3 {
     position: relative;
 
-    margin-bottom: 25px;
+    margin: 0 0 22px;
 
-    color: #ffffff;
+    color: #f0ece6;
 
-    font-size: 14px;
+    font-size: 13px;
 
-    font-weight: 700;
+    font-weight: 600;
 }
+
 
 .footer-column h3::after {
     content: "";
@@ -182,56 +289,76 @@
     position: absolute;
 
     left: 0;
-    bottom: -9px;
 
-    width: 25px;
+    bottom: -8px;
+
+    width: 18px;
     height: 2px;
 
     border-radius: 5px;
 
-    background: #2f65ff;
+    background: #d97757;
 }
 
-.footer-column a {
-    margin-bottom: 13px;
 
-    color: #9da7bb;
+/* =========================================================
+   LINKS
+   ========================================================= */
 
-    font-size: 13px;
+.footer-column > a {
+    position: relative;
+
+    margin-bottom: 12px;
+
+    color: #a9a199;
 
     text-decoration: none;
 
-    transition: all 0.25s ease;
+    font-size: 11px;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
 }
 
-.footer-column a:hover {
-    padding-left: 5px;
 
-    color: #ffffff;
+.footer-column > a:hover {
+    color: #e6dfd7;
+
+    transform: translateX(4px);
 }
 
 
-/* =====================================================
+/* =========================================================
    CONTACT
-===================================================== */
-
-.footer-contact {
-    gap: 3px;
-}
+   ========================================================= */
 
 .contact-item {
+    width: 100%;
+
     display: flex;
 
     align-items: flex-start;
 
-    gap: 12px;
+    gap: 10px;
 
     margin-bottom: 13px;
+
+    padding: 5px 0;
+
+    transition:
+        transform 0.3s ease;
 }
 
+
+.contact-item:hover {
+    transform: translateX(3px);
+}
+
+
 .contact-item > span {
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
 
     flex-shrink: 0;
 
@@ -240,214 +367,359 @@
     align-items: center;
     justify-content: center;
 
-    border-radius: 8px;
+    border-radius: 7px;
 
-    background: rgba(47, 101, 255, 0.12);
+    background:
+        rgba(217, 119, 87, 0.1);
 
-    color: #6e96ff;
+    color: #d9876d;
 
-    font-size: 13px;
+    font-size: 11px;
 }
 
+
 .contact-item p {
-    margin: 2px 0 0;
+    margin: 3px 0 0;
 
-    color: #9da7bb;
+    color: #aaa39b;
 
-    font-size: 12px;
+    font-size: 10px;
 
     line-height: 1.6;
 }
 
 
-/* =====================================================
-   MIDDLE FEATURES
-===================================================== */
+/* =========================================================
+   MIDDLE FEATURE BAR
+   ========================================================= */
 
 .footer-middle {
-    max-width: 1400px;
+    position: relative;
 
-    margin: auto;
+    max-width: 1250px;
 
-    padding: 25px 7%;
+    margin: 0 auto;
+
+    padding:
+        18px
+        clamp(25px, 5vw, 60px);
 
     display: grid;
 
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns:
+        repeat(4, 1fr);
 
-    gap: 20px;
+    gap: 1px;
 
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-top:
+        1px solid rgba(255, 255, 255, 0.07);
 
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom:
+        1px solid rgba(255, 255, 255, 0.07);
 }
 
+
+/* =========================================================
+   FEATURE ITEMS
+   ========================================================= */
+
 .footer-middle > div {
+    min-height: 55px;
+
+    padding:
+        8px 18px;
+
     display: flex;
 
     flex-direction: column;
 
-    gap: 5px;
+    justify-content: center;
 
-    padding: 5px 15px;
+    gap: 4px;
 
-    border-right: 1px solid rgba(255, 255, 255, 0.08);
+    border-right:
+        1px solid rgba(255, 255, 255, 0.07);
+
+    transition:
+        background 0.3s ease;
 }
+
 
 .footer-middle > div:last-child {
     border-right: none;
 }
 
-.footer-middle strong {
-    color: #ffffff;
 
-    font-size: 12px;
-
-    font-weight: 700;
+.footer-middle > div:hover {
+    background:
+        rgba(255, 255, 255, 0.035);
 }
 
-.footer-middle span {
-    color: #7f899d;
+
+.footer-middle strong {
+    color: #ded8d0;
 
     font-size: 10px;
+
+    font-weight: 600;
 }
 
 
-/* =====================================================
+.footer-middle span {
+    color: #89827b;
+
+    font-size: 9px;
+}
+
+
+/* =========================================================
    BOTTOM
-===================================================== */
+   ========================================================= */
 
 .footer-bottom {
-    max-width: 1400px;
+    max-width: 1350px;
 
     margin: auto;
 
-    padding: 22px 7%;
+    padding:
+        20px
+        clamp(25px, 5vw, 75px)
+        23px;
 
     display: flex;
 
     align-items: center;
-    justify-content: space-between;
 
-    gap: 20px;
+    justify-content: space-between;
 }
+
+
+/* Copyright */
 
 .footer-bottom p {
     margin: 0;
 
-    color: #7f899d;
+    color: #7f7871;
 
-    font-size: 11px;
+    font-size: 9px;
 }
+
 
 .footer-bottom p strong {
-    color: #ffffff;
+    color: #a9a199;
 }
+
+
+/* =========================================================
+   BOTTOM LINKS
+   ========================================================= */
 
 .footer-bottom > div {
     display: flex;
 
+    align-items: center;
+
     gap: 20px;
 }
 
-.footer-bottom > div span {
-    color: #7f899d;
 
-    font-size: 11px;
+.footer-bottom > div span {
+    position: relative;
+
+    color: #7f7871;
+
+    font-size: 9px;
 
     cursor: pointer;
 
-    transition: 0.25s ease;
+    transition:
+        color 0.3s ease;
 }
+
 
 .footer-bottom > div span:hover {
-    color: #ffffff;
+    color: #d9876d;
 }
 
 
-/* =====================================================
+.footer-bottom > div span:not(:last-child)::after {
+    content: "";
+
+    position: absolute;
+
+    right: -11px;
+
+    top: 50%;
+
+    width: 3px;
+    height: 3px;
+
+    border-radius: 50%;
+
+    background: #625c56;
+
+    transform: translateY(-50%);
+}
+
+
+/* =========================================================
    TABLET
-===================================================== */
+   ========================================================= */
 
 @media (max-width: 1000px) {
 
     .footer-top {
-        grid-template-columns: 1.5fr 1fr 1fr;
+        grid-template-columns:
+            1.5fr
+            1fr
+            1fr;
 
         gap: 40px;
     }
 
-    .footer-brand {
+    .footer-contact {
         grid-column: span 3;
-
-        max-width: 600px;
     }
 
     .footer-middle {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns:
+            repeat(2, 1fr);
     }
 
     .footer-middle > div:nth-child(2) {
         border-right: none;
     }
-
 }
 
 
-/* =====================================================
+/* =========================================================
    MOBILE
-===================================================== */
+   ========================================================= */
 
 @media (max-width: 700px) {
+
+    .dhula-footer {
+        margin-top: 60px;
+    }
+
 
     .footer-top {
         grid-template-columns: 1fr;
 
-        padding: 55px 25px 40px;
-
         gap: 35px;
+
+        padding:
+            50px
+            25px
+            40px;
     }
+
 
     .footer-brand {
+        max-width: 100%;
+    }
+
+
+    .footer-contact {
         grid-column: auto;
-
-        max-width: none;
     }
 
-    .footer-column {
-        width: 100%;
-    }
 
     .footer-middle {
         grid-template-columns: 1fr;
 
-        padding: 25px;
-
-        gap: 0;
+        padding:
+            15px
+            25px;
     }
 
+
     .footer-middle > div {
-        padding: 15px 0;
+        min-height: 50px;
 
         border-right: none;
 
-        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        border-bottom:
+            1px solid rgba(255, 255, 255, 0.06);
     }
+
 
     .footer-middle > div:last-child {
         border-bottom: none;
     }
 
+
     .footer-bottom {
         flex-direction: column;
 
-        padding: 25px;
+        align-items: flex-start;
 
-        text-align: center;
+        gap: 15px;
+
+        padding:
+            20px
+            25px
+            25px;
     }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 450px) {
+
+    .footer-top {
+        padding:
+            42px
+            18px
+            35px;
+    }
+
+
+    .footer-logo h2 {
+        font-size: 19px;
+    }
+
+
+    .footer-brand > p {
+        font-size: 11px;
+    }
+
+
+    .footer-social a {
+        width: 32px;
+        height: 32px;
+    }
+
+
+    .footer-bottom {
+        padding:
+            18px
+            18px
+            23px;
+    }
+
 
     .footer-bottom > div {
-        justify-content: center;
+        gap: 16px;
     }
+}
 
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .footer-logo-icon,
+    .footer-social a,
+    .footer-column > a,
+    .contact-item,
+    .footer-middle > div,
+    .footer-bottom > div span {
+        transition: none !important;
+    }
 }

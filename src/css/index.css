@@ -1,0 +1,472 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+    --bg-primary: #f7f5f0;
+    --bg-secondary: #eeeae2;
+    --bg-card: #fffdf9;
+
+    --text-primary: #292522;
+    --text-secondary: #706963;
+    --text-muted: #969087;
+
+    --border: #ded9d1;
+
+    --accent: #d97757;
+    --accent-hover: #c86648;
+}
+
+html,
+body,
+#root {
+    margin: 0;
+    padding: 0;
+    font-family: "Inter", sans-serif !important;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+*,
+*::before,
+*::after {
+    font-family: inherit;
+}
+
+button,
+input,
+textarea,
+select {
+    font-family: inherit;
+}
+
+/* =========================================================
+   DHULA MART - CURRENT THEME OVERRIDE
+   Keeps existing layout / animations / 3D styling
+   Only changes the visual theme
+   ========================================================= */
+
+/* =========================
+   MAIN BACKGROUND
+   ========================= */
+
+.user-page {
+    background:
+        radial-gradient(
+            circle at 85% 35%,
+            rgba(217, 119, 87, 0.14),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 10% 80%,
+            rgba(217, 119, 87, 0.07),
+            transparent 28%
+        ),
+        linear-gradient(
+            135deg,
+            #f7f5f0 0%,
+            #f4f1eb 50%,
+            #eee9e2 100%
+        ) !important;
+
+    color: #292623;
+}
+
+
+/* =========================
+   BACKGROUND CIRCLE
+   ========================= */
+
+.user-page::before {
+    border-color:
+        rgba(217, 119, 87, 0.12) !important;
+
+    box-shadow:
+        0 0 0 70px
+        rgba(217, 119, 87, 0.025),
+
+        0 0 0 140px
+        rgba(217, 119, 87, 0.018),
+
+        0 0 0 210px
+        rgba(217, 119, 87, 0.012) !important;
+}
+
+
+/* =========================
+   BACKGROUND GLOW
+   ========================= */
+
+.user-page::after {
+    background:
+        rgba(217, 119, 87, 0.12) !important;
+
+    filter:
+        blur(70px) !important;
+}
+
+
+/* =========================
+   TOGGLE
+   ========================= */
+
+.toggle-btn {
+    color:
+        #756e66 !important;
+
+    background:
+        transparent !important;
+}
+
+
+.toggle-btn:not(.active) {
+    color:
+        #756e66 !important;
+
+    background:
+        transparent !important;
+}
+
+
+.toggle-btn:not(.active):hover {
+    color:
+        #292623 !important;
+
+    background:
+        rgba(217, 119, 87, 0.06) !important;
+}
+
+
+/* =========================
+   ACTIVE TOGGLE
+   ========================= */
+
+.toggle-btn.active {
+    color:
+        #ffffff !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            #d97757,
+            #bd6043
+        ) !important;
+
+    box-shadow:
+        0 8px 25px
+        rgba(217, 119, 87, 0.28) !important;
+}
+
+
+/* =========================
+   GLASS CARD
+   ========================= */
+
+.auth-face {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.72),
+            rgba(255, 253, 249, 0.55)
+        ) !important;
+
+    border:
+        1px solid
+        rgba(41, 38, 35, 0.10) !important;
+
+    box-shadow:
+        0 25px 60px
+        rgba(41, 38, 35, 0.12),
+
+        inset 0 1px 0
+        rgba(255, 255, 255, 0.9) !important;
+
+    backdrop-filter:
+        blur(25px) !important;
+
+    -webkit-backdrop-filter:
+        blur(25px) !important;
+}
+
+
+/* =========================
+   FORM TITLES
+   ========================= */
+
+.login-container h2,
+.signup-container h2 {
+    color:
+        #292623 !important;
+}
+
+
+/* =========================
+   LABELS
+   ========================= */
+
+.input-group label {
+    color:
+        #393530 !important;
+}
+
+
+/* =========================
+   INPUTS
+   ========================= */
+
+.login-container input,
+.signup-container input {
+    background:
+        rgba(255, 255, 255, 0.62) !important;
+
+    border:
+        1px solid
+        rgba(41, 38, 35, 0.11) !important;
+
+    color:
+        #292623 !important;
+
+    box-shadow:
+        inset 0 1px 1px
+        rgba(255, 255, 255, 0.9),
+
+        0 7px 18px
+        rgba(41, 38, 35, 0.05) !important;
+}
+
+
+/* =========================
+   INPUT HOVER
+   ========================= */
+
+.login-container input:hover,
+.signup-container input:hover {
+    background:
+        rgba(255, 255, 255, 0.82) !important;
+
+    border-color:
+        rgba(217, 119, 87, 0.25) !important;
+
+    box-shadow:
+        0 9px 22px
+        rgba(41, 38, 35, 0.07) !important;
+}
+
+
+/* =========================
+   INPUT FOCUS
+   ========================= */
+
+.login-container input:focus,
+.signup-container input:focus {
+    background:
+        #fffdf9 !important;
+
+    border-color:
+        rgba(217, 119, 87, 0.65) !important;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(217, 119, 87, 0.10),
+
+        0 8px 25px
+        rgba(217, 119, 87, 0.10) !important;
+
+    transform:
+        translateY(-1px);
+}
+
+
+/* =========================
+   PLACEHOLDER
+   ========================= */
+
+.login-container input::placeholder,
+.signup-container input::placeholder {
+    color:
+        #aaa29a !important;
+}
+
+
+/* =========================
+   AUTOFILL
+   ========================= */
+
+.login-container input:-webkit-autofill,
+.login-container input:-webkit-autofill:hover,
+.login-container input:-webkit-autofill:focus,
+.signup-container input:-webkit-autofill,
+.signup-container input:-webkit-autofill:hover,
+.signup-container input:-webkit-autofill:focus {
+
+    -webkit-text-fill-color:
+        #292623 !important;
+
+    -webkit-box-shadow:
+        0 0 0 1000px
+        #fffdf9
+        inset !important;
+}
+
+
+/* =========================
+   OPTIONS
+   ========================= */
+
+.options label {
+    color:
+        #756e66 !important;
+}
+
+
+.options a {
+    color:
+        #bd6043 !important;
+}
+
+
+.options a:hover {
+    color:
+        #d97757 !important;
+}
+
+
+/* =========================
+   CHECKBOX
+   ========================= */
+
+.options input[type="checkbox"] {
+    accent-color:
+        #d97757 !important;
+}
+
+
+/* =========================
+   LOGIN BUTTON
+   ========================= */
+
+.login-btn {
+    background:
+        linear-gradient(
+            135deg,
+            #d97757 0%,
+            #cf6b4d 50%,
+            #bd6043 100%
+        ) !important;
+
+    box-shadow:
+        0 10px 25px
+        rgba(217, 119, 87, 0.25),
+
+        inset 0 1px 1px
+        rgba(255, 255, 255, 0.25) !important;
+}
+
+
+/* =========================
+   LOGIN BUTTON HOVER
+   ========================= */
+
+.login-btn:hover {
+    box-shadow:
+        0 14px 30px
+        rgba(217, 119, 87, 0.32),
+
+        inset 0 1px 1px
+        rgba(255, 255, 255, 0.3) !important;
+}
+
+
+/* =========================
+   SIGNUP BUTTON
+   ========================= */
+
+.signup-container form > button {
+    background:
+        linear-gradient(
+            135deg,
+            #d97757 0%,
+            #cf6b4d 50%,
+            #bd6043 100%
+        ) !important;
+
+    box-shadow:
+        0 10px 25px
+        rgba(217, 119, 87, 0.25),
+
+        inset 0 1px 1px
+        rgba(255, 255, 255, 0.25) !important;
+}
+
+
+/* =========================
+   SIGNUP BUTTON HOVER
+   ========================= */
+
+.signup-container form > button:hover {
+    box-shadow:
+        0 14px 30px
+        rgba(217, 119, 87, 0.32),
+
+        inset 0 1px 1px
+        rgba(255, 255, 255, 0.3) !important;
+}
+
+
+/* =========================
+   LOGIN / SIGNUP TEXT
+   ========================= */
+
+.signup,
+.login-link {
+    color:
+        #756e66 !important;
+}
+
+
+.signup a,
+.login-link a {
+    color:
+        #bd6043 !important;
+}
+
+
+.signup a:hover,
+.login-link a:hover {
+    color:
+        #d97757 !important;
+}
+
+
+/* =========================
+   SUCCESS MESSAGE
+   ========================= */
+
+.login-success,
+.message-box.success {
+    background:
+        rgba(255, 253, 249, 0.96) !important;
+
+    color:
+        #55715b !important;
+
+    border-left:
+        7px solid
+        #7c9b80 !important;
+}
+
+
+/* =========================
+   ERROR MESSAGE
+   ========================= */
+
+.login-error,
+.message-box.error {
+    background:
+        rgba(255, 253, 249, 0.96) !important;
+
+    color:
+        #a44f3e !important;
+
+    border-left:
+        7px solid
+        #d97757 !important;
+}

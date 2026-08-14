@@ -9,11 +9,7 @@ export const UserPage = () => {
 
     return (
         <div className="user-page">
-
             <div className="auth-layout">
-
-                {/* ================= TOGGLE ================= */}
-
                 <div className="toggle-container">
 
                     <button
@@ -35,11 +31,7 @@ export const UserPage = () => {
                     >
                         Login
                     </button>
-
                 </div>
-
-
-                {/* ================= FLIP CARD ================= */}
 
                 <div
                     className={`auth-scene ${
@@ -50,32 +42,19 @@ export const UserPage = () => {
                 >
 
                     <div className="auth-card">
-
-                        {/* ================= SIGN UP ================= */}
-
                         <div className="auth-face signup-face">
-
                             <SignUp
                                 setIsSignUp={setIsSignUp}
                             />
-
                         </div>
 
-
-                        {/* ================= LOGIN ================= */}
-
                         <div className="auth-face login-face">
-
                             <Login
                                 setIsSignUp={setIsSignUp}
                             />
-
                         </div>
-
                     </div>
-
                 </div>
-
             </div>
 
         </div>

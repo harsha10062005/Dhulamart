@@ -1,70 +1,97 @@
 import "../css/Header.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { FaUserCircle } from "react-icons/fa";
 
 export const Header = () => {
-  return (
-    <header className="header">
 
-      {/* Logo */}
-      <div className="logo">
-        <NavLink to="/" className="logo-text">
-          Dhula Mart
-        </NavLink>
-      </div>
+    const location = useLocation();
 
-      {/* Center Navigation */}
-      <nav className="nav-menu">
+    const getSliderPosition = () => {
 
-        <NavLink
-          to="/"
-          end
-          className={({ isActive }) =>
-            isActive ? "nav-item active" : "nav-item"
-          }
-        >
-          Home
-        </NavLink>
+        if (location.pathname === "/") {
+            return "translateX(0px)";
+        }
 
-        <NavLink
-          to="/items"
-          className={({ isActive }) =>
-            isActive ? "nav-item active" : "nav-item"
-          }
-        >
-          Products
-        </NavLink>
+        if (location.pathname === "/items") {
+            return "translateX(86px)";
+        }
 
-        <NavLink
-          to="/about"
-          className={({ isActive }) =>
-            isActive ? "nav-item active" : "nav-item"
-          }
-        >
-          About
-        </NavLink>
+        if (location.pathname === "/about") {
+            return "translateX(172px)";
+        }
 
-        <NavLink
-          to="/Details"
-          className={({ isActive }) =>
-            isActive ? "nav-item active" : "nav-item"
-          }
-        >
-          Users
-        </NavLink>
+        if (location.pathname === "/user") {
+            return "translateX(258px)";
+        }
+
+        return "translateX(0px)";
+    };
 
 
-      </nav>
+    return (
+        <header className="floating-header">
 
-      {/* Right Side */}
-      <div className="profile">
-        <NavLink to="/user">
-          <FaUserCircle className="user-icon" />
-        </NavLink>
-      </div>
+            <nav className="dynamic-island">
 
-    </header>
-  );
+                <div
+                    className="nav-slider"
+                    style={{
+                        transform: getSliderPosition()
+                    }}
+                />
+
+                <NavLink
+                    to="/"
+                    end
+                    className={({ isActive }) =>
+                        isActive
+                            ? "nav-item active"
+                            : "nav-item"
+                    }
+                >
+                    Home
+                </NavLink>
+
+
+                <NavLink
+                    to="/items"
+                    className={({ isActive }) =>
+                        isActive
+                            ? "nav-item active"
+                            : "nav-item"
+                    }
+                >
+                    Products
+                </NavLink>
+
+
+                <NavLink
+                    to="/about"
+                    className={({ isActive }) =>
+                        isActive
+                            ? "nav-item active"
+                            : "nav-item"
+                    }
+                >
+                    About
+                </NavLink>
+
+
+                <NavLink
+                    to="/user"
+                    className={({ isActive }) =>
+                        isActive
+                            ? "nav-user active"
+                            : "nav-user"
+                    }
+                >
+                    <FaUserCircle />
+                </NavLink>
+
+            </nav>
+
+        </header>
+    );
 };
 
 export default Header;

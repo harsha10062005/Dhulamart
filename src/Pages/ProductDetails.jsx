@@ -3,6 +3,8 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import "../css/productDetails.css";
 import Loading from "../Loaders/loading";
+import Header from "../components/Header";
+import { Footer } from "../components/footer";
 
 export const ProductDetails = () => {
 
@@ -37,7 +39,10 @@ export const ProductDetails = () => {
 
 
     return (
-        <div className="product-details-page">
+
+        <>
+        <Header/>
+            <div className="product-details-page">
             <div className="product-details-container">
                 <div className="product-image">
                     <img
@@ -99,6 +104,9 @@ export const ProductDetails = () => {
                 </div>
             </div>
         </div>
+        <Footer/>
+        </>
+        
     );
 };
 

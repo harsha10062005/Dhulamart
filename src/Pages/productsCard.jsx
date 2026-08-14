@@ -1,67 +1,147 @@
 import "../css/products.css";
 import { Loader } from "../Loaders/loader";
 import { useNavigate } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
 
 export const ProductsCards = ({
-  products,
-  page,
-  setPage,
-  totalPages,
-  load,
+    products,
+    page,
+    setPage,
+    totalPages,
+    load,
+    category = "",
+    search = ""
 }) => {
+    const navigate = useNavigate();
 
-  const navigate = useNavigate()
-  
-  return (
-    <>
-      {load ? (<Loader />
-      ) : (
+    const gridVariants = {
+        hidden: { opacity: 0 },
+        show: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.12,
+                delayChildren: 0.1
+            }
+        },
+        exit: {
+            opacity: 0,
+            transition: { duration: 0.25 }
+        }
+    };
+
+    const cardVariants = {
+        hidden: {
+            opacity: 0,
+            y: 45,
+            scale: 0.96
+        },
+        show: {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            transition: {
+                duration: 0.65,
+                ease: "easeOut"
+            }
+        },
+        exit: {
+            opacity: 0,
+            y: 25,
+            scale: 0.96,
+            transition: {
+                duration: 0.3,
+                ease: "easeIn"
+            }
+        }
+    };
+
+    return (
         <>
-          <div className="products-container mt-4">
-            <div className="row">
-              {products.map((item) => (
-                <div className="col-lg-3 col-md-4 col-sm-6 mb-4" key={item.id}>
-                  <div className="card h-100">
-                    <img
-                      src={item.thumbnail}
-                      className="card-img-top"
-                      alt={item.title}
-                    />
+            {load ? (
+                <Loader />
+            ) : (
+                <>
+                    <AnimatePresence mode="wait">
+                        <motion.div
+                            key={`${category}-${search}-${page}`}
+                            className="products-container"
+                            variants={gridVariants}
+                            initial="hidden"
+                            animate="show"
+                            exit="exit"
+                        >
+                            <div className="products-grid">
+                                {products.map((item) => (
+                                    <motion.div
+                                        className="product-card-wrapper"
+                                        key={item.id}
+                                        variants={cardVariants}
+                                    >
+                                        <article className="product-card">
+                                            <div className="product-image-box">
+                                                <img
+                                                    src={item.thumbnail}
+                                                    alt={item.title}
+                                                />
+                                            </div>
 
-                    <div className="card-body">
-                      <h5 className="card-title">{item.title}</h5>
+                                            <div className="product-card-body">
+                                                <h3>{item.title}</h3>
 
-                      <p className="card-text">{item.description}</p>
+                                                <p>{item.description}</p>
 
-                      <h5 className="text-success">${item.price}</h5>
+                                                <div className="product-card-bottom">
+                                                    <strong>
+                                                        ${item.price}
+                                                    </strong>
 
-                      <button
-                        type="button"
-                        className="btn btn-primary"
-                        onClick={() => navigate(`/products/${item.id}`)}
-                      >
-                        View Product
-                      </button>
+                                                    <button
+                                                        onClick={() =>
+                                                            navigate(
+                                                                `/products/${item.id}`
+                                                            )
+                                                        }
+                                                    >
+                                                        View Product
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </motion.div>
+                                ))}
+                            </div>
+                        </motion.div>
+                    </AnimatePresence>
+
+                    <div className="pagination">
+                        {Array.from(
+                            { length: totalPages },
+                            (_, index) => (
+                                <button
+                                    key={index + 1}
+                                    className={
+                                        page === index + 1
+                                            ? "active"
+                                            : ""
+                                    }
+                                    onClick={() =>
+                                       { setPage(index + 1),
+                                        window.scrollTo({
+                                          top:700,
+                                          behavior:'smooth',
+                                        })
+                                       }
+                                    }
+                                >
+                                    {index + 1}
+                                </button>
+                            )
+                        )}
                     </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="pagination">
-            {Array.from({ length: totalPages }, (_, index) => (
-              <button
-                key={index + 1}
-                className={page === index + 1 ? "active" : ""}
-                onClick={() => setPage(index + 1)}
-              >
-                {index + 1}
-              </button>
-            ))}
-          </div>
+                </>
+            )}
         </>
-      )}
-    </>
-  );
+    );
 };
+
+export default ProductsCards;

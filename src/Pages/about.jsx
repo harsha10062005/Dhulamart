@@ -1,422 +1,781 @@
 import { Footer } from "../components/footer";
 import { Header } from "../components/Header";
 import "../css/About.css";
+import { motion } from "framer-motion";
 
 export const About = () => {
-  return (
-    <>
-      <Header />
 
-      <main className="about-page">
-
-        {/* ================= ABOUT HERO ================= */}
-        <section className="about-hero">
-
-          <div className="about-hero-content">
-
-            <span>GET TO KNOW US</span>
-
-            <h1>
-              About <strong>Dhula Mart</strong>
-            </h1>
-
-            <p>
-              Everything you need, all in one place. Dhula Mart is
-              designed to make discovering and shopping for everyday
-              products simple, convenient and enjoyable.
-            </p>
-
-          </div>
-
-          <div className="about-hero-decoration">
-
-            <div className="hero-orbit orbit-one"></div>
-            <div className="hero-orbit orbit-two"></div>
-
-            <div className="hero-shopping-icon">
-              🛒
-            </div>
-
-          </div>
-
-        </section>
-
-
-        {/* ================= OUR STORY ================= */}
-        <section className="about-story">
-
-          <div className="story-image">
-
-            <div className="story-image-main">
-              🛍️
-            </div>
-
-            <div className="story-floating-card">
-              <span>DHULA MART</span>
-              <strong>Everything in one place.</strong>
-            </div>
-
-          </div>
-
-
-          <div className="story-content">
-
-            <span className="about-label">
-              OUR STORY
-            </span>
-
-            <h2>
-              Built Around A
-              <strong> Simple Idea.</strong>
-            </h2>
-
-            <p>
-              Shopping should not feel complicated. Dhula Mart is
-              created around the idea of bringing different shopping
-              categories together in one convenient place.
-            </p>
-
-            <p>
-              From everyday essentials to technology, fashion,
-              accessories and more, our goal is to create a simple
-              environment where you can explore what you need without
-              unnecessary complexity.
-            </p>
-
-            <div className="story-highlight">
-
-              <div>
-                <span>01</span>
-                <strong>Explore</strong>
-              </div>
-
-              <div>
-                <span>02</span>
-                <strong>Discover</strong>
-              </div>
-
-              <div>
-                <span>03</span>
-                <strong>Shop</strong>
-              </div>
-
-            </div>
-
-          </div>
-
-        </section>
-
-
-        {/* ================= MISSION ================= */}
-        <section className="mission-section">
-
-          <div className="mission-content">
-
-            <span>OUR MISSION</span>
-
-            <h2>
-              Making Shopping
-              <strong> Simple & Convenient.</strong>
-            </h2>
-
-            <p>
-              Our mission is to create a shopping experience that
-              focuses on convenience, quality, accessibility and
-              customer satisfaction.
-            </p>
-
-            <p>
-              We want Dhula Mart to be a place where people can
-              discover different products and categories through a
-              clean and easy-to-use experience.
-            </p>
-
-          </div>
-
-          <div className="mission-icon">
-            ✨
-          </div>
-
-        </section>
-
-
-        {/* ================= WHAT WE OFFER ================= */}
-        <section className="offer-section">
-
-          <div className="section-heading">
-
-            <span>WHAT WE OFFER</span>
-
-            <h2>
-              Explore Different
-              <strong> Categories</strong>
-            </h2>
-
-            <p>
-              Dhula Mart brings different shopping interests together
-              in one place.
-            </p>
-
-          </div>
-
-
-          <div className="offer-grid">
-
-            <div className="offer-card">
-              <div>📱</div>
-              <h3>Electronics</h3>
-              <p>
-                Explore technology, gadgets and everyday electronics.
-              </p>
-            </div>
-
-            <div className="offer-card">
-              <div>👕</div>
-              <h3>Fashion</h3>
-              <p>
-                Discover clothing and styles for different occasions.
-              </p>
-            </div>
-
-            <div className="offer-card">
-              <div>🏠</div>
-              <h3>Home & Living</h3>
-              <p>
-                Find products designed to make your home comfortable.
-              </p>
-            </div>
-
-            <div className="offer-card">
-              <div>🛒</div>
-              <h3>Everyday Essentials</h3>
-              <p>
-                Explore products for your everyday shopping needs.
-              </p>
-            </div>
-
-            <div className="offer-card">
-              <div>💎</div>
-              <h3>Accessories</h3>
-              <p>
-                Discover accessories that complete your everyday style.
-              </p>
-            </div>
-
-            <div className="offer-card">
-              <div>✨</div>
-              <h3>More To Explore</h3>
-              <p>
-                Discover more categories as Dhula Mart continues to grow.
-              </p>
-            </div>
-
-          </div>
-
-        </section>
-
-
-        {/* ================= VALUES ================= */}
-        <section className="values-section">
-
-          <div className="section-heading">
-
-            <span>WHAT MATTERS TO US</span>
-
-            <h2>
-              Our Core
-              <strong> Values</strong>
-            </h2>
-
-          </div>
-
-
-          <div className="values-grid">
-
-            <div className="value-card">
-
-              <span className="value-number">
-                01
-              </span>
-
-              <div className="value-icon">
-                ❤️
-              </div>
-
-              <h3>Customer First</h3>
-
-              <p>
-                We believe a good shopping experience starts with
-                understanding the customer.
-              </p>
-
-            </div>
-
-
-            <div className="value-card">
-
-              <span className="value-number">
-                02
-              </span>
-
-              <div className="value-icon">
-                ⭐
-              </div>
-
-              <h3>Quality</h3>
-
-              <p>
-                We aim to provide a shopping environment focused on
-                quality and value.
-              </p>
-
-            </div>
-
-
-            <div className="value-card">
-
-              <span className="value-number">
-                03
-              </span>
-
-              <div className="value-icon">
-                🔍
-              </div>
-
-              <h3>Transparency</h3>
-
-              <p>
-                Clear information and a straightforward experience
-                should always be part of shopping.
-              </p>
-
-            </div>
-
-
-            <div className="value-card">
-
-              <span className="value-number">
-                04
-              </span>
-
-              <div className="value-icon">
-                💡
-              </div>
-
-              <h3>Innovation</h3>
-
-              <p>
-                We continuously look for better ways to improve the
-                shopping experience.
-              </p>
-
-            </div>
-
-          </div>
-
-        </section>
-
-
-        {/* ================= HOW WE WORK ================= */}
-        <section className="about-process">
-
-          <div className="section-heading">
-
-            <span>OUR APPROACH</span>
-
-            <h2>
-              Shopping Should Feel
-              <strong> Simple.</strong>
-            </h2>
-
-          </div>
-
-
-          <div className="process-grid">
-
-            <div className="process-card">
-
-              <span>01</span>
-
-              <div>
-                🔎
-              </div>
-
-              <h3>Discover</h3>
-
-              <p>
-                Explore categories and discover products that interest
-                you.
-              </p>
-
-            </div>
-
-
-            <div className="process-card">
-
-              <span>02</span>
-
-              <div>
-                🛍️
-              </div>
-
-              <h3>Choose</h3>
-
-              <p>
-                Find what you need through a simple shopping interface.
-              </p>
-
-            </div>
-
-
-            <div className="process-card">
-
-              <span>03</span>
-
-              <div>
-                🛒
-              </div>
-
-              <h3>Shop</h3>
-
-              <p>
-                Enjoy a convenient experience while shopping for your
-                selected products.
-              </p>
-
-            </div>
-
-          </div>
-
-        </section>
-
-
-        {/* ================= FINAL CTA ================= */}
-        <section className="about-cta">
-
-          <div>
-
-            <span>WELCOME TO DHULA MART</span>
-
-            <h2>
-              Everything You Need.
-              <strong> All In One Place.</strong>
-            </h2>
-
-            <p>
-              Explore Dhula Mart and discover a simpler way to shop.
-            </p>
-
-            <button>
-              Start Exploring →
-            </button>
-
-          </div>
-
-        </section>
-
-      </main>
-
-      <Footer />
-    </>
-  );
+    const reveal = {
+        hidden: {
+            opacity: 0,
+            y: 60
+        },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                duration: 0.8,
+                ease: "easeOut"
+            }
+        }
+    };
+
+    const stagger = {
+        hidden: {},
+        visible: {
+            transition: {
+                staggerChildren: 0.12
+            }
+        }
+    };
+
+    return (
+        <>
+            <Header />
+
+            <main className="about-page">
+
+                {/* ================= HERO ================= */}
+
+                <section className="about-hero">
+
+                    <div className="hero-noise"></div>
+
+                    <motion.div
+                        className="hero-content"
+                        initial="hidden"
+                        animate="visible"
+                        variants={stagger}
+                    >
+
+                        <motion.span
+                            className="eyebrow"
+                            variants={reveal}
+                        >
+                            WELCOME TO DHULA MART
+                        </motion.span>
+
+                        <motion.h1 variants={reveal}>
+                            Shopping
+                            <br />
+
+                            <span>
+                                without
+                            </span>
+
+                            <br />
+
+                            <strong>
+                                the noise.
+                            </strong>
+                        </motion.h1>
+
+                        <motion.p variants={reveal}>
+                            A simpler way to discover products,
+                            explore categories and find the things
+                            you actually need.
+                        </motion.p>
+
+                        <motion.div
+                            className="hero-actions"
+                            variants={reveal}
+                        >
+
+                            <a href="/items">
+                                Explore Products
+                                <span>↗</span>
+                            </a>
+
+                            <div className="hero-status">
+                                <span></span>
+                                Everything in one place
+                            </div>
+
+                        </motion.div>
+
+                    </motion.div>
+
+
+                    {/* ================= HERO ORBIT ================= */}
+
+                    <motion.div
+                        className="hero-stage"
+                        initial={{
+                            opacity: 0,
+                            scale: 0.7
+                        }}
+                        animate={{
+                            opacity: 1,
+                            scale: 1
+                        }}
+                        transition={{
+                            duration: 1.2,
+                            ease: "easeOut"
+                        }}
+                    >
+
+                        <div className="hero-orbit orbit-a"></div>
+                        <div className="hero-orbit orbit-b"></div>
+                        <div className="hero-orbit orbit-c"></div>
+
+                        <motion.div
+                            className="hero-core"
+                            animate={{
+                                y: [0, -14, 0],
+                                rotate: [-3, 2, -3]
+                            }}
+                            transition={{
+                                duration: 5,
+                                repeat: Infinity,
+                                ease: "easeInOut"
+                            }}
+                        >
+                            🛒
+                        </motion.div>
+
+
+                        <motion.div
+                            className="floating-object object-a"
+                            animate={{
+                                y: [0, -18, 0],
+                                rotate: [0, 8, 0]
+                            }}
+                            transition={{
+                                duration: 4,
+                                repeat: Infinity,
+                                ease: "easeInOut"
+                            }}
+                        >
+                            📱
+                        </motion.div>
+
+
+                        <motion.div
+                            className="floating-object object-b"
+                            animate={{
+                                y: [0, 14, 0],
+                                rotate: [0, -8, 0]
+                            }}
+                            transition={{
+                                duration: 4.5,
+                                repeat: Infinity,
+                                ease: "easeInOut"
+                            }}
+                        >
+                            👕
+                        </motion.div>
+
+
+                        <motion.div
+                            className="floating-object object-c"
+                            animate={{
+                                y: [0, -12, 0],
+                                rotate: [0, 6, 0]
+                            }}
+                            transition={{
+                                duration: 3.8,
+                                repeat: Infinity,
+                                ease: "easeInOut"
+                            }}
+                        >
+                            💎
+                        </motion.div>
+
+
+                        <div className="hero-card">
+
+                            <span>
+                                DHULA MART
+                            </span>
+
+                            <strong>
+                                Everything.
+                                <br />
+                                In one place.
+                            </strong>
+
+                            <small>
+                                DISCOVER MORE →
+                            </small>
+
+                        </div>
+
+                    </motion.div>
+
+                </section>
+
+                {/* ================= STORY ================= */}
+
+                <motion.section
+                    className="story-section"
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{
+                        once: true,
+                        amount: 0.2
+                    }}
+                    variants={stagger}
+                >
+
+                    <motion.div
+                        className="story-visual"
+                        variants={reveal}
+                    >
+
+                        <div className="story-number">
+                            01
+                        </div>
+
+                        <motion.div
+                            className="story-panel"
+                            whileHover={{
+                                rotate: 0,
+                                scale: 1.03
+                            }}
+                        >
+
+                            <span>
+                                THE IDEA
+                            </span>
+
+                            <h3>
+                                Less noise.
+                                <br />
+                                More discovery.
+                            </h3>
+
+                            <div className="story-symbol">
+                                ✦
+                            </div>
+
+                        </motion.div>
+
+
+                        <motion.div
+                            className="story-badge badge-one"
+                            animate={{
+                                y: [0, -10, 0]
+                            }}
+                            transition={{
+                                duration: 3,
+                                repeat: Infinity
+                            }}
+                        >
+                            SIMPLE
+                        </motion.div>
+
+
+                        <motion.div
+                            className="story-badge badge-two"
+                            animate={{
+                                y: [0, 10, 0]
+                            }}
+                            transition={{
+                                duration: 4,
+                                repeat: Infinity
+                            }}
+                        >
+                            CONVENIENT
+                        </motion.div>
+
+                    </motion.div>
+
+
+                    <motion.div
+                        className="story-content"
+                        variants={reveal}
+                    >
+
+                        <span className="eyebrow">
+                            OUR STORY
+                        </span>
+
+                        <h2>
+                            We wanted shopping
+                            <strong>
+                                to feel lighter.
+                            </strong>
+                        </h2>
+
+                        <p>
+                            Dhula Mart started with a simple thought:
+                            shopping doesn't need to feel complicated.
+                        </p>
+
+                        <p>
+                            Instead of overwhelming users with endless
+                            choices and unnecessary steps, we want to
+                            create a clean space where products are easy
+                            to explore and decisions feel natural.
+                        </p>
+
+                        <div className="story-flow">
+
+                            <div>
+                                <span>01</span>
+                                <strong>Explore</strong>
+                            </div>
+
+                            <div>
+                                <span>02</span>
+                                <strong>Discover</strong>
+                            </div>
+
+                            <div>
+                                <span>03</span>
+                                <strong>Choose</strong>
+                            </div>
+
+                        </div>
+
+                    </motion.div>
+
+                </motion.section>
+
+
+                {/* ================= INTERACTIVE PROCESS ================= */}
+
+                <section className="interactive-section">
+
+                    <motion.div
+                        className="section-heading"
+                        initial={{
+                            opacity: 0,
+                            y: 40
+                        }}
+                        whileInView={{
+                            opacity: 1,
+                            y: 0
+                        }}
+                        viewport={{
+                            once: true
+                        }}
+                    >
+
+                        <span className="eyebrow">
+                            THE EXPERIENCE
+                        </span>
+
+                        <h2>
+                            Three steps.
+                            <strong>
+                                That's it.
+                            </strong>
+                        </h2>
+
+                    </motion.div>
+
+
+                    <div className="interactive-process">
+
+                        <motion.div
+                            className="process-card"
+                            whileHover={{
+                                y: -12
+                            }}
+                        >
+
+                            <span className="process-index">
+                                01
+                            </span>
+
+                            <div className="process-icon">
+                                🔎
+                            </div>
+
+                            <h3>
+                                Explore
+                            </h3>
+
+                            <p>
+                                Browse categories and discover
+                                something interesting.
+                            </p>
+
+                            <b>
+                                →
+                            </b>
+
+                        </motion.div>
+
+
+                        <motion.div
+                            className="process-card featured"
+                            whileHover={{
+                                y: -12
+                            }}
+                        >
+
+                            <span className="process-index">
+                                02
+                            </span>
+
+                            <div className="process-icon">
+                                ✦
+                            </div>
+
+                            <h3>
+                                Discover
+                            </h3>
+
+                            <p>
+                                Find useful products through a
+                                simple interface.
+                            </p>
+
+                            <b>
+                                →
+                            </b>
+
+                        </motion.div>
+
+
+                        <motion.div
+                            className="process-card"
+                            whileHover={{
+                                y: -12
+                            }}
+                        >
+
+                            <span className="process-index">
+                                03
+                            </span>
+
+                            <div className="process-icon">
+                                🛒
+                            </div>
+
+                            <h3>
+                                Shop
+                            </h3>
+
+                            <p>
+                                Choose what you need and enjoy
+                                the experience.
+                            </p>
+
+                            <b>
+                                →
+                            </b>
+
+                        </motion.div>
+
+                    </div>
+
+                </section>
+
+
+                {/* ================= MISSION ================= */}
+
+                <motion.section
+                    className="mission-section"
+                    initial={{
+                        opacity: 0
+                    }}
+                    whileInView={{
+                        opacity: 1
+                    }}
+                    viewport={{
+                        once: true,
+                        amount: 0.2
+                    }}
+                >
+
+                    <div className="mission-content">
+
+                        <span className="eyebrow">
+                            OUR MISSION
+                        </span>
+
+                        <h2>
+                            Make every
+                            <strong>
+                                click count.
+                            </strong>
+                        </h2>
+
+                        <p>
+                            We're building a shopping experience
+                            around simplicity, usefulness and
+                            discovery.
+                        </p>
+
+                        <div className="mission-pills">
+
+                            <span>
+                                ✓ Simple
+                            </span>
+
+                            <span>
+                                ✓ Useful
+                            </span>
+
+                            <span>
+                                ✓ Comfortable
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div className="mission-visual">
+
+                        <motion.div
+                            className="mission-orbit"
+                            animate={{
+                                rotate: 360
+                            }}
+                            transition={{
+                                duration: 20,
+                                repeat: Infinity,
+                                ease: "linear"
+                            }}
+                        >
+                            <span>DISCOVER</span>
+                        </motion.div>
+
+                        <motion.div
+                            className="mission-center"
+                            animate={{
+                                scale: [1, 1.08, 1]
+                            }}
+                            transition={{
+                                duration: 3,
+                                repeat: Infinity
+                            }}
+                        >
+                            ✨
+                        </motion.div>
+
+                    </div>
+
+                </motion.section>
+
+
+                {/* ================= CATEGORIES ================= */}
+
+                <section className="categories-section">
+
+                    <motion.div
+                        className="section-heading"
+                        initial={{
+                            opacity: 0,
+                            y: 40
+                        }}
+                        whileInView={{
+                            opacity: 1,
+                            y: 0
+                        }}
+                        viewport={{
+                            once: true
+                        }}
+                    >
+
+                        <span className="eyebrow">
+                            EXPLORE
+                        </span>
+
+                        <h2>
+                            Different needs.
+                            <strong>
+                                One destination.
+                            </strong>
+                        </h2>
+
+                    </motion.div>
+
+
+                    <motion.div
+                        className="category-cards"
+                        variants={stagger}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{
+                            once: true,
+                            amount: 0.15
+                        }}
+                    >
+
+                        {[
+                            ["📱", "Electronics", "Technology & gadgets"],
+                            ["👕", "Fashion", "Styles for everyday"],
+                            ["🏠", "Home & Living", "Make your space better"],
+                            ["💎", "Accessories", "Complete your style"]
+                        ].map((item, index) => (
+
+                            <motion.div
+                                className="category-card"
+                                key={item[1]}
+                                variants={reveal}
+                                whileHover={{
+                                    y: -10
+                                }}
+                            >
+
+                                <span>
+                                    0{index + 1}
+                                </span>
+
+                                <div className="category-icon">
+                                    {item[0]}
+                                </div>
+
+                                <h3>
+                                    {item[1]}
+                                </h3>
+
+                                <p>
+                                    {item[2]}
+                                </p>
+
+                                <b>
+                                    Explore ↗
+                                </b>
+
+                            </motion.div>
+
+                        ))}
+
+                    </motion.div>
+
+                </section>
+
+
+                {/* ================= VALUES ================= */}
+
+                <section className="values-section">
+
+                    <div className="values-heading">
+
+                        <span className="eyebrow">
+                            WHAT MATTERS
+                        </span>
+
+                        <h2>
+                            Built on
+                            <strong>
+                                good principles.
+                            </strong>
+                        </h2>
+
+                    </div>
+
+
+                    <div className="values-list">
+
+                        {[
+                            [
+                                "01",
+                                "Customer First",
+                                "The experience starts with understanding people."
+                            ],
+                            [
+                                "02",
+                                "Quality",
+                                "Useful products should provide meaningful value."
+                            ],
+                            [
+                                "03",
+                                "Transparency",
+                                "Clear information creates better decisions."
+                            ],
+                            [
+                                "04",
+                                "Innovation",
+                                "We keep searching for better ways to improve."
+                            ]
+                        ].map((item) => (
+
+                            <motion.div
+                                className="value-row"
+                                key={item[0]}
+                                whileHover={{
+                                    x: 10
+                                }}
+                            >
+
+                                <span>
+                                    {item[0]}
+                                </span>
+
+                                <h3>
+                                    {item[1]}
+                                </h3>
+
+                                <p>
+                                    {item[2]}
+                                </p>
+
+                                <b>
+                                    ↗
+                                </b>
+
+                            </motion.div>
+
+                        ))}
+
+                    </div>
+
+                </section>
+
+
+                {/* ================= CTA ================= */}
+
+                <section className="about-cta">
+
+                    <div className="cta-glow"></div>
+
+                    <motion.div
+                        className="cta-content"
+                        initial={{
+                            opacity: 0,
+                            scale: .9
+                        }}
+                        whileInView={{
+                            opacity: 1,
+                            scale: 1
+                        }}
+                        viewport={{
+                            once: true
+                        }}
+                        transition={{
+                            duration: .7
+                        }}
+                    >
+
+                        <span className="eyebrow">
+                            READY?
+                        </span>
+
+                        <h2>
+                            Your next
+                            <strong>
+                                discovery awaits.
+                            </strong>
+                        </h2>
+
+                        <p>
+                            Explore Dhula Mart and see what's waiting
+                            for you.
+                        </p>
+
+                        <a href="/items">
+                            Start Exploring
+                            <span>
+                                →
+                            </span>
+                        </a>
+
+                    </motion.div>
+
+                </section>
+
+            </main>
+
+            <Footer />
+        </>
+    );
 };
+
+export default About;
