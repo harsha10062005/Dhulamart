@@ -1,11 +1,11 @@
 import { Route } from "react-router-dom";
-import { Router } from "./routing/routers";
 import Home from "./Pages/Home";
+import { Router } from "./routing/Routers";
 
 function App() {
   return (
     <>
-      <Router />
+      <Router/>
     </>
   );
 }
