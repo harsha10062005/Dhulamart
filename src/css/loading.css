@@ -87,3 +87,33 @@
     transform: translateY(-400%);
   }
 }
+
+@media (max-width: 768px) {
+  .pd-card {
+    padding: 0.85rem 1.25rem;
+    border-radius: 1rem;
+  }
+
+  .pd-loader {
+    font-size: 20px;
+    height: 34px;
+    padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pd-card {
+    padding: 0.65rem 1rem;
+  }
+
+  .pd-loader {
+    font-size: 17px;
+    height: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .pd-word {
+    padding-left: 4px;
+  }
+}

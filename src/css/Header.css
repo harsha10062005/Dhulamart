@@ -686,6 +686,9 @@
 
         padding:
             4px !important;
+
+        max-width:
+            calc(100vw - 16px) !important;
     }
 
 

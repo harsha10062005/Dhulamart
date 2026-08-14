@@ -2127,6 +2127,11 @@
             repeat(2, 1fr);
     }
 
+    .interactive-process {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
     .values-section {
         gap: 45px;
     }
