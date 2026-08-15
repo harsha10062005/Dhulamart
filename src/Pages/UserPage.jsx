@@ -2,13 +2,17 @@ import { useState } from "react";
 import SignUp from "../components/signup";
 import Login from "../components/login";
 import "../css/UserPage.css";
+import Header from "../components/header";
 
 export const UserPage = () => {
 
     const [isSignUp, setIsSignUp] = useState(true);
 
     return (
-        <div className="user-page">
+
+        <>
+        <Header/>
+            <div className="user-page">
             <div className="auth-layout">
                 <div className="toggle-container">
 
@@ -58,6 +62,8 @@ export const UserPage = () => {
             </div>
 
         </div>
+        </>
+        
     );
 };
 

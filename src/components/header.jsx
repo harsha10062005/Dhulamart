@@ -1,97 +1,124 @@
 import "../css/Header.css";
 import { NavLink, useLocation } from "react-router-dom";
 import { FaUserCircle } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 export const Header = () => {
-
     const location = useLocation();
 
-    const getSliderPosition = () => {
-
-        if (location.pathname === "/") {
-            return "translateX(0px)";
-        }
-
-        if (location.pathname === "/items") {
-            return "translateX(86px)";
-        }
-
-        if (location.pathname === "/about") {
-            return "translateX(172px)";
-        }
-
-        if (location.pathname === "/user") {
-            return "translateX(258px)";
-        }
-
-        return "translateX(0px)";
-    };
-
+    const isUserActive = location.pathname === "/user" || location.pathname === "/login";
 
     return (
         <header className="floating-header">
-
             <nav className="dynamic-island">
-
-                <div
-                    className="nav-slider"
-                    style={{
-                        transform: getSliderPosition()
-                    }}
-                />
-
                 <NavLink
                     to="/"
                     end
                     className={({ isActive }) =>
-                        isActive
-                            ? "nav-item active"
-                            : "nav-item"
+                        isActive ? "nav-item active" : "nav-item"
                     }
                 >
-                    Home
+                    {({ isActive }) => (
+                        <>
+                            {isActive && (
+                                <motion.div
+                                    layoutId="nav-slider-pill"
+                                    className="nav-slider"
+                                    transition={{
+                                        type: "spring",
+                                        stiffness: 380,
+                                        damping: 32,
+                                    }}
+                                />
+                            )}
+                            <span className="nav-label">Home</span>
+                        </>
+                    )}
                 </NavLink>
-
 
                 <NavLink
                     to="/items"
                     className={({ isActive }) =>
-                        isActive
+                        isActive || location.pathname.startsWith("/products")
                             ? "nav-item active"
                             : "nav-item"
                     }
                 >
-                    Products
+                    {({ isActive }) => {
+                        const active = isActive || location.pathname.startsWith("/products");
+                        return (
+                            <>
+                                {active && (
+                                    <motion.div
+                                        layoutId="nav-slider-pill"
+                                        className="nav-slider"
+                                        transition={{
+                                            type: "spring",
+                                            stiffness: 380,
+                                            damping: 32,
+                                        }}
+                                    />
+                                )}
+                                <span className="nav-label">Products</span>
+                            </>
+                        );
+                    }}
                 </NavLink>
-
 
                 <NavLink
                     to="/about"
                     className={({ isActive }) =>
-                        isActive
-                            ? "nav-item active"
-                            : "nav-item"
+                        isActive ? "nav-item active" : "nav-item"
                     }
                 >
-                    About
+                    {({ isActive }) => (
+                        <>
+                            {isActive && (
+                                <motion.div
+                                    layoutId="nav-slider-pill"
+                                    className="nav-slider"
+                                    transition={{
+                                        type: "spring",
+                                        stiffness: 380,
+                                        damping: 32,
+                                    }}
+                                />
+                            )}
+                            <span className="nav-label">About</span>
+                        </>
+                    )}
                 </NavLink>
-
 
                 <NavLink
                     to="/user"
                     className={({ isActive }) =>
-                        isActive
-                            ? "nav-user active"
-                            : "nav-user"
+                        isActive || isUserActive ? "nav-user active" : "nav-user"
                     }
+                    aria-label="User Account"
                 >
-                    <FaUserCircle />
+                    {({ isActive }) => {
+                        const active = isActive || isUserActive;
+                        return (
+                            <>
+                                {active && (
+                                    <motion.div
+                                        layoutId="nav-slider-pill"
+                                        className="nav-slider"
+                                        transition={{
+                                            type: "spring",
+                                            stiffness: 380,
+                                            damping: 32,
+                                        }}
+                                    />
+                                )}
+                                <span className="nav-icon"><FaUserCircle /></span>
+                            </>
+                        );
+                    }}
                 </NavLink>
-
             </nav>
-
         </header>
     );
 };
 
-export default Header;
+export default Header;

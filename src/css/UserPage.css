@@ -1,6 +1,12 @@
+* =========================================================
+   AUTHENTICATION PAGE
+   COMPLETE RESPONSIVE CSS
+   ========================================================= */
+
+
 /* =========================================================
    GLOBAL
-========================================================= */
+   ========================================================= */
 
 * {
     margin: 0;
@@ -15,52 +21,87 @@ body,
     min-height: 100%;
 }
 
+html {
+    overflow-x: hidden;
+}
+
 body {
-    font-family: "Poppins", sans-serif;
+    margin: 0;
+
+    font-family:
+        "Poppins",
+        sans-serif;
+
+    overflow-x: hidden;
+
+    color: #403a36;
 }
 
 
 /* =========================================================
    USER PAGE
-========================================================= */
+   ========================================================= */
 
 .user-page {
-    width: 100%;
-    height: 100dvh;
 
     position: relative;
 
+    width: 100%;
+
+    min-height: 100vh;
+    min-height: 100svh;
+
+    height: auto;
+
     display: flex;
+
     align-items: center;
     justify-content: center;
 
-    overflow: hidden;
+    padding: 25px 20px;
+
+    overflow-x: hidden;
+    overflow-y: auto;
 
     background:
+
         radial-gradient(
             circle at 8% 10%,
-            rgba(91, 45, 190, 0.85),
+            rgba(
+                91,
+                45,
+                190,
+                0.18
+            ),
             transparent 30%
         ),
+
         radial-gradient(
             circle at 92% 90%,
-            rgba(0, 170, 210, 0.55),
+            rgba(
+                0,
+                170,
+                210,
+                0.16
+            ),
             transparent 32%
         ),
+
         linear-gradient(
             120deg,
-            #47238d 0%,
-            #151a35 48%,
-            #073d4c 100%
+            #f7f4ee 0%,
+            #f4efea 50%,
+            #eee5df 100%
         );
 }
 
 
 /* =========================================================
    BACKGROUND CIRCLE
-========================================================= */
+   ========================================================= */
 
 .user-page::before {
+
     content: "";
 
     position: absolute;
@@ -73,87 +114,203 @@ body {
 
     border-radius: 50%;
 
-    border: 1px solid rgba(170, 190, 255, 0.12);
+    border:
+        1px solid
+        rgba(
+            170,
+            150,
+            140,
+            0.15
+        );
 
     box-shadow:
-        0 0 0 70px rgba(170, 190, 255, 0.025),
-        0 0 0 140px rgba(170, 190, 255, 0.018),
-        0 0 0 210px rgba(170, 190, 255, 0.012);
+
+        0 0 0 70px
+        rgba(
+            170,
+            150,
+            140,
+            0.025
+        ),
+
+        0 0 0 140px
+        rgba(
+            170,
+            150,
+            140,
+            0.018
+        ),
+
+        0 0 0 210px
+        rgba(
+            170,
+            150,
+            140,
+            0.012
+        );
 
     pointer-events: none;
+
+    z-index: 0;
+}
+
+
+/* =========================================================
+   BACKGROUND GLOW
+   ========================================================= */
+
+.user-page::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 450px;
+    height: 450px;
+
+    right: -200px;
+    bottom: -250px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(
+            217,
+            111,
+            80,
+            0.10
+        );
+
+    filter:
+        blur(60px);
+
+    pointer-events: none;
+
+    z-index: 0;
 }
 
 
 /* =========================================================
    AUTH LAYOUT
-   TOGGLE + CARD ARE ONE CENTERED GROUP
-========================================================= */
+   IMPORTANT:
+   TOGGLE + CARD ARE VERTICAL
+   ========================================================= */
 
 .auth-layout {
-    position: absolute;
 
-    top: 50%;
-    left: 50%;
+    position: relative;
+
+    z-index: 10;
 
     width: 100%;
 
-    transform: translate(-50%, -50%);
+    min-height: 0;
 
     display: flex;
+
     flex-direction: column;
 
     align-items: center;
+
     justify-content: center;
 
-    gap: 6px;
+    gap: 16px;
 
-    z-index: 10;
+    margin: 0;
+
+    padding: 0;
+
+    transform: none;
 }
 
 
 /* =========================================================
-   TOGGLE PILL
-========================================================= */
+   TOGGLE CONTAINER
+   ========================================================= */
 
 .toggle-container {
+
     position: relative;
 
+    top: auto;
+    left: auto;
+    right: auto;
+    bottom: auto;
+
+    transform: none;
+
     width: 300px;
-    height: 48px;
+    height: 52px;
 
     display: flex;
+
     align-items: center;
 
-    padding: 3px;
+    padding: 4px;
 
-    border-radius: 50px;
-
-    background: rgba(255, 255, 255, 0.08);
-
-    border: 1px solid rgba(255, 255, 255, 0.18);
-
-    box-shadow:
-        0 8px 25px rgba(0, 0, 0, 0.18),
-        inset 0 1px 0 rgba(255, 255, 255, 0.12);
-
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-
-    overflow: hidden;
+    margin: 0;
 
     flex-shrink: 0;
 
-    margin: 0 auto;
+    border-radius: 50px;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.82
+        );
+
+    border:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.95
+        );
+
+    box-shadow:
+
+        0 12px 30px
+        rgba(
+            80,
+            60,
+            45,
+            0.13
+        ),
+
+        inset 0 1px 0
+        rgba(
+            255,
+            255,
+            255,
+            0.95
+        );
+
+    backdrop-filter:
+        blur(18px);
+
+    -webkit-backdrop-filter:
+        blur(18px);
+
+    overflow: hidden;
+
+    z-index: 50;
 }
 
 
 /* =========================================================
    TOGGLE BUTTON
-========================================================= */
+   ========================================================= */
 
 .toggle-btn {
+
+    position: relative;
+
     width: 50%;
-    height: 40px;
+    height: 44px;
 
     border: none;
     outline: none;
@@ -162,95 +319,150 @@ body {
 
     background: transparent;
 
-    color: rgba(255, 255, 255, 0.72);
+    color:
+        #77716b;
 
-    font-family: "Poppins", sans-serif;
+    font-family:
+        "Poppins",
+        sans-serif;
 
     font-size: 15px;
+
     font-weight: 600;
 
     cursor: pointer;
 
     transition:
-        background 0.45s ease,
-        color 0.35s ease,
-        box-shadow 0.45s ease,
-        transform 0.2s ease;
+
+        background
+        0.3s
+        ease,
+
+        color
+        0.3s
+        ease,
+
+        box-shadow
+        0.3s
+        ease,
+
+        transform
+        0.2s
+        ease;
 }
 
 
 /* =========================================================
    ACTIVE TOGGLE
-========================================================= */
+   ========================================================= */
 
 .toggle-btn.active {
+
     color: #ffffff;
 
     background:
+
         linear-gradient(
             135deg,
-            #6366f1,
-            #8b5cf6
+            #d96f50,
+            #c85e3e
         );
 
     box-shadow:
-        0 7px 18px rgba(99, 102, 241, 0.35);
+
+        0 7px 18px
+        rgba(
+            201,
+            94,
+            62,
+            0.30
+        );
+}
+
+
+/* =========================================================
+   INACTIVE TOGGLE
+   ========================================================= */
+
+.toggle-btn:not(.active) {
+
+    background:
+        transparent;
+
+    color:
+        #77716b;
 }
 
 
 /* =========================================================
    TOGGLE HOVER
-========================================================= */
+   ========================================================= */
 
 .toggle-btn:not(.active):hover {
-    color: #ffffff;
+
+    color:
+        #4f4944;
 
     background:
-        rgba(255, 255, 255, 0.06);
+        rgba(
+            217,
+            111,
+            80,
+            0.08
+        );
 }
 
 
 /* =========================================================
-   TOGGLE CLICK
-========================================================= */
+   TOGGLE ACTIVE
+   ========================================================= */
 
 .toggle-btn:active {
-    transform: scale(0.97);
+
+    transform:
+        scale(0.97);
 }
 
 
 /* =========================================================
-   FLIP SCENE
-========================================================= */
+   3D FLIP SCENE
+   ========================================================= */
 
 .auth-scene {
-    width: 340px;
-    height: 455px;
 
     position: relative;
 
-    perspective: 1500px;
+    width: 340px;
+    height: 455px;
+
+    margin: 0;
 
     flex-shrink: 0;
 
-    margin: 0 auto;
+    perspective: 1500px;
+
+    z-index: 10;
 }
 
 
 /* =========================================================
    FLIP CARD
-========================================================= */
+   ========================================================= */
 
 .auth-card {
-    width: 100%;
-    height: 100%;
 
     position: relative;
 
-    transform-style: preserve-3d;
+    width: 100%;
+    height: 100%;
+
+    transform-style:
+        preserve-3d;
 
     transition:
-        transform 0.8s
+
+        transform
+        0.8s
         cubic-bezier(
             0.4,
             0.2,
@@ -262,27 +474,34 @@ body {
 
 /* =========================================================
    SIGNUP SIDE
-========================================================= */
+   ========================================================= */
 
-.auth-scene.show-signup .auth-card {
-    transform: rotateY(0deg);
+.auth-scene.show-signup
+.auth-card {
+
+    transform:
+        rotateY(0deg);
 }
 
 
 /* =========================================================
    LOGIN SIDE
-========================================================= */
+   ========================================================= */
 
-.auth-scene.show-login .auth-card {
-    transform: rotateY(180deg);
+.auth-scene.show-login
+.auth-card {
+
+    transform:
+        rotateY(180deg);
 }
 
 
 /* =========================================================
-   CARD FACES
-========================================================= */
+   CARD FACE
+   ========================================================= */
 
 .auth-face {
+
     position: absolute;
 
     inset: 0;
@@ -290,53 +509,148 @@ body {
     width: 100%;
     height: 100%;
 
-    padding: 24px 27px;
+    padding:
+        24px
+        27px;
 
     border-radius: 21px;
 
     background:
-        rgba(255, 255, 255, 0.12);
 
-    backdrop-filter: blur(25px);
-    -webkit-backdrop-filter: blur(25px);
+        linear-gradient(
+            145deg,
+            rgba(
+                255,
+                255,
+                255,
+                0.92
+            ),
+            rgba(
+                250,
+                247,
+                243,
+                0.88
+            )
+        );
+
+    backdrop-filter:
+        blur(25px);
+
+    -webkit-backdrop-filter:
+        blur(25px);
 
     border:
         1px solid
-        rgba(255, 255, 255, 0.18);
+        rgba(
+            255,
+            255,
+            255,
+            0.85
+        );
 
     box-shadow:
-        0 20px 45px rgba(0, 0, 0, 0.25),
-        inset 0 1px 0 rgba(255, 255, 255, 0.25);
 
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
+        0 25px 60px
+        rgba(
+            72,
+            55,
+            42,
+            0.18
+        ),
+
+        0 8px 20px
+        rgba(
+            72,
+            55,
+            42,
+            0.08
+        ),
+
+        inset 0 1px 0
+        rgba(
+            255,
+            255,
+            255,
+            0.95
+        );
+
+    backface-visibility:
+        hidden;
+
+    -webkit-backface-visibility:
+        hidden;
+
+    overflow: visible;
+}
+
+
+/* =========================================================
+   CARD SUBTLE HIGHLIGHT
+   ========================================================= */
+
+.auth-face::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    border-radius:
+        inherit;
+
+    pointer-events: none;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(
+                255,
+                255,
+                255,
+                0.45
+            ),
+            transparent 30%,
+            transparent 70%,
+            rgba(
+                217,
+                111,
+                80,
+                0.04
+            )
+        );
 }
 
 
 /* =========================================================
    SIGNUP FACE
-========================================================= */
+   ========================================================= */
 
 .signup-face {
-    transform: rotateY(0deg);
+
+    transform:
+        rotateY(0deg);
 }
 
 
 /* =========================================================
    LOGIN FACE
-========================================================= */
+   ========================================================= */
 
 .login-face {
-    transform: rotateY(180deg);
+
+    transform:
+        rotateY(180deg);
 }
 
 
 /* =========================================================
-   REMOVE ORIGINAL COMPONENT PAGE WRAPPERS
-========================================================= */
+   INNER LOGIN PAGE
+   ========================================================= */
 
-.auth-face .login-page,
-.auth-face .signup-page {
+.auth-face .login-page {
+
     width: 100%;
     height: 100%;
 
@@ -350,16 +664,41 @@ body {
     align-items: center;
     justify-content: center;
 
-    background: transparent;
+    background:
+        transparent;
 }
 
 
 /* =========================================================
-   REMOVE ORIGINAL INNER CARD
-========================================================= */
+   INNER SIGNUP PAGE
+   ========================================================= */
 
-.auth-face .login-container,
-.auth-face .signup-container {
+.auth-face .signup-page {
+
+    width: 100%;
+    height: 100%;
+
+    min-height: 0;
+
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background:
+        transparent;
+}
+
+
+/* =========================================================
+   REMOVE INNER LOGIN CARD
+   ========================================================= */
+
+.auth-face .login-container {
+
     width: 100% !important;
     height: 100% !important;
 
@@ -371,22 +710,63 @@ body {
 
     border-radius: 0 !important;
 
-    background: transparent !important;
+    background:
+        transparent !important;
 
-    box-shadow: none !important;
+    box-shadow:
+        none !important;
 
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
+    backdrop-filter:
+        none !important;
 
-    transform: none !important;
+    -webkit-backdrop-filter:
+        none !important;
+
+    transform:
+        none !important;
+}
+
+
+/* =========================================================
+   REMOVE INNER SIGNUP CARD
+   ========================================================= */
+
+.auth-face .signup-container {
+
+    width: 100% !important;
+    height: 100% !important;
+
+    padding: 0 !important;
+
+    margin: 0 !important;
+
+    border: none !important;
+
+    border-radius: 0 !important;
+
+    background:
+        transparent !important;
+
+    box-shadow:
+        none !important;
+
+    backdrop-filter:
+        none !important;
+
+    -webkit-backdrop-filter:
+        none !important;
+
+    transform:
+        none !important;
 }
 
 
 /* =========================================================
    SIGNUP WRAPPER
-========================================================= */
+   ========================================================= */
 
 .auth-face .signup-wrapper {
+
     width: 100%;
     height: 100%;
 
@@ -398,15 +778,21 @@ body {
     align-items: center;
     justify-content: center;
 
-    background: transparent;
+    background:
+        transparent;
 }
 
 
 /* =========================================================
    FORM
-========================================================= */
+   ========================================================= */
 
 .auth-face form {
+
+    position: relative;
+
+    z-index: 2;
+
     width: 100%;
     height: 100%;
 
@@ -420,40 +806,50 @@ body {
 
 /* =========================================================
    TITLE
-========================================================= */
+   ========================================================= */
 
 .auth-face h2 {
+
     text-align: center;
 
-    color: #ffffff;
+    color:
+        #302b28;
 
     font-size: 24px;
 
+    line-height: 1.2;
+
+    font-weight: 700;
+
     margin-bottom: 14px;
 
-    letter-spacing: 1px;
+    letter-spacing:
+        0.5px;
 }
 
 
 /* =========================================================
    INPUT GROUP
-========================================================= */
+   ========================================================= */
 
 .auth-face .input-group {
+
     margin-bottom: 8px;
 }
 
 
 /* =========================================================
    LABEL
-========================================================= */
+   ========================================================= */
 
 .auth-face .input-group label {
+
     display: block;
 
     margin-bottom: 4px;
 
-    color: #ffffff;
+    color:
+        #4b4641;
 
     font-size: 12px;
 
@@ -463,37 +859,65 @@ body {
 
 /* =========================================================
    INPUT
-========================================================= */
+   ========================================================= */
 
 .auth-face input {
+
     width: 100%;
 
     height: 40px;
 
-    padding: 0 14px;
+    padding:
+        0
+        14px;
 
-    border: none;
+    border:
+        1px solid
+        rgba(
+            100,
+            90,
+            80,
+            0.16
+        );
+
     outline: none;
 
     border-radius: 13px;
 
     background:
-        rgba(255, 255, 255, 0.18) !important;
+        rgba(
+            255,
+            255,
+            255,
+            0.76
+        ) !important;
 
-    color: #ffffff;
+    color:
+        #332e2a;
 
-    font-family: "Poppins", sans-serif;
+    font-family:
+        "Poppins",
+        sans-serif;
 
     font-size: 12px;
 
-    backdrop-filter: blur(15px);
-
     box-shadow:
-        inset 0 2px 8px
-        rgba(255, 255, 255, 0.08),
 
-        0 6px 16px
-        rgba(0, 0, 0, 0.12);
+        inset 0 1px 5px
+        rgba(
+            80,
+            65,
+            55,
+            0.035
+        ),
+
+        0 5px 14px
+        rgba(
+            80,
+            60,
+            45,
+            0.05
+        );
 
     transition:
         0.3s ease;
@@ -502,84 +926,132 @@ body {
 
 /* =========================================================
    INPUT HOVER
-========================================================= */
+   ========================================================= */
 
 .auth-face input:hover {
+
     background:
-        rgba(255, 255, 255, 0.22) !important;
+        rgba(
+            255,
+            255,
+            255,
+            0.92
+        ) !important;
+
+    border-color:
+        rgba(
+            100,
+            90,
+            80,
+            0.22
+        );
 }
 
 
 /* =========================================================
    INPUT FOCUS
-========================================================= */
+   ========================================================= */
 
 .auth-face input:focus {
+
     background:
-        rgba(255, 255, 255, 0.28) !important;
+        #ffffff !important;
+
+    border-color:
+        #d96f50;
 
     box-shadow:
-        0 0 0 4px
-        rgba(99, 102, 241, 0.25),
 
-        0 10px 25px
-        rgba(99, 102, 241, 0.30);
+        0 0 0 3px
+        rgba(
+            217,
+            111,
+            80,
+            0.12
+        ),
+
+        0 8px 20px
+        rgba(
+            217,
+            111,
+            80,
+            0.12
+        );
 
     transform:
-        translateY(-2px);
+        translateY(-1px);
 }
 
 
 /* =========================================================
    PLACEHOLDER
-========================================================= */
+   ========================================================= */
 
 .auth-face input::placeholder {
+
     color:
-        rgba(255, 255, 255, 0.65);
+        #aaa39c;
+
+    opacity: 1;
 }
 
 
 /* =========================================================
    AUTOFILL
-========================================================= */
+   ========================================================= */
 
 .auth-face input:-webkit-autofill,
 .auth-face input:-webkit-autofill:hover,
 .auth-face input:-webkit-autofill:focus {
 
-    -webkit-text-fill-color: #ffffff;
+    -webkit-text-fill-color:
+        #332e2a;
 
     -webkit-box-shadow:
         0 0 0 1000px
-        rgba(255, 255, 255, 0.18)
+        #ffffff
         inset;
 
     transition:
-        background-color 5000s ease-in-out 0s;
+        background-color
+        5000s
+        ease-in-out
+        0s;
 }
 
 
 /* =========================================================
    LOGIN OPTIONS
-========================================================= */
+   ========================================================= */
 
 .auth-face .options {
+
     display: flex;
 
-    justify-content: space-between;
+    justify-content:
+        space-between;
 
     align-items: center;
 
+    gap: 8px;
+
     margin:
-        8px 0 10px;
+        8px
+        0
+        10px;
 
     font-size: 12px;
 }
 
 
+/* =========================================================
+   REMEMBER ME
+   ========================================================= */
+
 .auth-face .options label {
-    color: #ffffff;
+
+    color:
+        #55504b;
 
     display: flex;
 
@@ -589,20 +1061,57 @@ body {
 }
 
 
+/* =========================================================
+   CHECKBOX
+   ========================================================= */
+
 .auth-face .options input[type="checkbox"] {
+
     width: auto;
+
     height: auto;
 
-    accent-color: #4facfe;
+    padding: 0;
+
+    margin: 0;
+
+    accent-color:
+        #d96f50;
+}
+
+
+/* =========================================================
+   FORGOT PASSWORD
+   ========================================================= */
+
+.auth-face .options a {
+
+    color:
+        #c85e3e;
+
+    text-decoration:
+        none;
+
+    transition:
+        0.3s ease;
+}
+
+
+.auth-face .options a:hover {
+
+    color:
+        #9f4329;
 }
 
 
 /* =========================================================
    BUTTON
-========================================================= */
+   ========================================================= */
 
 .auth-face .login-btn,
 .auth-face form > button {
+
+    position: relative;
 
     width: 100%;
 
@@ -610,76 +1119,166 @@ body {
 
     margin-top: 4px;
 
+    padding:
+        0
+        15px;
+
     border: none;
+
     outline: none;
 
     border-radius: 14px;
 
-    color: #ffffff;
+    color:
+        #ffffff;
 
-    font-family: "Poppins", sans-serif;
+    font-family:
+        "Poppins",
+        sans-serif;
 
     font-size: 14px;
 
     font-weight: 600;
 
-    letter-spacing: 0.3px;
+    letter-spacing:
+        0.3px;
 
     cursor: pointer;
 
     background:
+
         linear-gradient(
             135deg,
-            #6366f1,
-            #8b5cf6,
-            #a855f7
+            #d96f50,
+            #c85e3e,
+            #b95234
         );
 
-    background-size: 200% 200%;
+    background-size:
+        200% 200%;
 
     box-shadow:
+
         0 10px 22px
-        rgba(99, 102, 241, 0.35);
+        rgba(
+            201,
+            94,
+            62,
+            0.25
+        ),
+
+        inset 0 1px 0
+        rgba(
+            255,
+            255,
+            255,
+            0.20
+        );
 
     transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease,
-        background-position 0.4s ease;
+
+        transform
+        0.3s
+        ease,
+
+        box-shadow
+        0.3s
+        ease,
+
+        background-position
+        0.4s
+        ease;
+}
+
+
+/* =========================================================
+   BUTTON SHINE
+   ========================================================= */
+
+.auth-face .login-btn::before,
+.auth-face form > button::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    border-radius:
+        inherit;
+
+    background:
+
+        linear-gradient(
+            100deg,
+            transparent 20%,
+            rgba(
+                255,
+                255,
+                255,
+                0.18
+            ) 50%,
+            transparent 80%
+        );
+
+    transform:
+        translateX(-120%);
+
+    transition:
+        transform
+        0.6s
+        ease;
+}
+
+
+.auth-face .login-btn:hover::before,
+.auth-face form > button:hover::before {
+
+    transform:
+        translateX(120%);
 }
 
 
 /* =========================================================
    BUTTON HOVER
-========================================================= */
+   ========================================================= */
 
 .auth-face .login-btn:hover,
 .auth-face form > button:hover {
 
     transform:
-        translateY(-3px);
+        translateY(-2px);
 
     background-position:
         right center;
 
     box-shadow:
-        0 16px 30px
-        rgba(99, 102, 241, 0.45);
+
+        0 15px 30px
+        rgba(
+            201,
+            94,
+            62,
+            0.32
+        );
 }
 
 
 /* =========================================================
    BUTTON ACTIVE
-========================================================= */
+   ========================================================= */
 
 .auth-face .login-btn:active,
 .auth-face form > button:active {
-    transform: scale(0.97);
+
+    transform:
+        scale(0.97);
 }
 
 
 /* =========================================================
-   LOGIN / SIGNUP LINKS
-========================================================= */
+   SIGNUP / LOGIN LINK
+   ========================================================= */
 
 .auth-face .signup,
 .auth-face .login-link {
@@ -688,7 +1287,8 @@ body {
 
     text-align: center;
 
-    color: #ffffff;
+    color:
+        #77716b;
 
     font-size: 12px;
 }
@@ -697,27 +1297,30 @@ body {
 .auth-face .signup a,
 .auth-face .login-link a {
 
-    color: #8ba7ff;
+    color:
+        #c85e3e;
 
     font-weight: 600;
 
-    text-decoration: none;
+    text-decoration:
+        none;
 
-    transition: 0.3s ease;
+    transition:
+        0.3s ease;
 }
 
 
 .auth-face .signup a:hover,
 .auth-face .login-link a:hover {
 
-    color: #c7d2ff;
+    color:
+        #963f29;
 }
 
 
 /* =========================================================
-   ERROR / SUCCESS
-   DOES NOT MOVE THE CARD
-========================================================= */
+   ERROR / SUCCESS MESSAGE
+   ========================================================= */
 
 .auth-face .login-error,
 .auth-face .login-success,
@@ -725,7 +1328,10 @@ body {
 
     position: absolute;
 
-    left: calc(100% + 20px);
+    left:
+        calc(
+            100% + 20px
+        );
 
     top: 50%;
 
@@ -735,138 +1341,190 @@ body {
 
     padding: 18px;
 
-    transform: translateY(-50%);
+    transform:
+        translateY(-50%);
 
     border-radius: 14px;
 
     z-index: 1000;
 
     box-shadow:
+
         0 15px 35px
-        rgba(0, 0, 0, 0.20);
+        rgba(
+            60,
+            45,
+            35,
+            0.18
+        );
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    gap: 7px;
 }
 
 
 /* =========================================================
-   IMPORTANT:
-   KEEP TOGGLE + CARD CENTERED
-========================================================= */
+   ERROR
+   ========================================================= */
 
-@media (min-width: 601px) {
+.auth-face .login-error,
+.auth-face .message-box.error {
 
-    .auth-layout {
-        position: absolute;
+    background:
+        linear-gradient(
+            135deg,
+            #fff1ee,
+            #fce7e3
+        );
 
-        top: 50%;
-        left: 50%;
+    color:
+        #b83f32;
 
-        width: 100%;
+    border:
+        1px solid
+        rgba(
+            220,
+            80,
+            60,
+            0.18
+        );
 
-        height: auto;
+    border-left:
+        5px solid
+        #df5c48;
+}
 
-        transform: translate(-50%, -50%);
 
-        display: flex;
+/* =========================================================
+   SUCCESS
+   ========================================================= */
 
-        flex-direction: column;
+.auth-face .login-success,
+.auth-face .message-box.success {
 
-        align-items: center;
+    background:
+        linear-gradient(
+            135deg,
+            #eefaf3,
+            #e1f5ea
+        );
 
-        justify-content: center;
+    color:
+        #27784b;
 
-        gap: 6px;
+    border:
+        1px solid
+        rgba(
+            45,
+            150,
+            90,
+            0.18
+        );
 
-        margin: 0;
-        padding: 0;
+    border-left:
+        5px solid
+        #43a968;
+}
+
+
+/* =========================================================
+   MESSAGE TITLE
+   ========================================================= */
+
+.auth-face .message-box h3,
+.auth-face .login-error h3,
+.auth-face .login-success h3 {
+
+    margin: 0;
+
+    font-size: 17px;
+}
+
+
+/* =========================================================
+   MESSAGE TEXT
+   ========================================================= */
+
+.auth-face .message-box p,
+.auth-face .login-error p,
+.auth-face .login-success p {
+
+    margin: 0;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   MESSAGE ANIMATION
+   ========================================================= */
+
+@keyframes messageIn {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(-50%)
+            translateX(20px);
     }
 
-    .toggle-container {
-        position: relative;
+    to {
 
-        top: auto;
-        left: auto;
-        right: auto;
-        bottom: auto;
+        opacity: 1;
 
-        transform: none;
-
-        margin: 0 auto;
-    }
-
-    .auth-scene {
-        position: relative;
-
-        top: auto;
-        left: auto;
-        right: auto;
-        bottom: auto;
-
-        transform: none;
-
-        margin: 0 auto;
+        transform:
+            translateY(-50%)
+            translateX(0);
     }
 }
 
 
 /* =========================================================
-   MOBILE
-========================================================= */
+   TABLET
+   ========================================================= */
 
-@media (max-width: 600px) {
+@media (max-width: 900px) {
 
     .user-page {
-        min-height: 100dvh;
 
-        height: auto;
-
-        overflow-x: hidden;
-        overflow-y: auto;
-
-        padding: 15px 0 25px;
+        padding:
+            20px
+            15px;
     }
 
 
     .auth-layout {
 
-        position: relative;
-
-        top: auto;
-        left: auto;
-
-        width: 100%;
-
-        min-height: 100dvh;
-
-        padding: 10px 12px;
-
-        transform: none;
-
-        gap: 6px;
-
-        display: flex;
-
-        flex-direction: column;
-
-        align-items: center;
-
-        justify-content: center;
+        gap: 14px;
     }
 
 
     .toggle-container {
 
-        position: relative;
+        width:
+            min(
+                300px,
+                calc(
+                    100vw - 40px
+                )
+            );
 
-        width: 285px;
-        height: 46px;
-
-        margin: 0 auto;
+        height: 50px;
     }
 
 
     .toggle-btn {
 
-        height: 38px;
+        height: 42px;
 
         font-size: 14px;
     }
@@ -874,19 +1532,30 @@ body {
 
     .auth-scene {
 
-        width: 92vw;
+        width:
+            min(
+                340px,
+                calc(
+                    100vw - 40px
+                )
+            );
 
-        max-width: 340px;
-
-        height: 450px;
-
-        margin: 0 auto;
+        height:
+            455px;
     }
 
 
     .auth-face {
 
-        padding: 22px 20px;
+        padding:
+            23px
+            25px;
+    }
+
+
+    .auth-face h2 {
+
+        font-size: 23px;
     }
 
 
@@ -894,65 +1563,954 @@ body {
     .auth-face .login-success,
     .auth-face .message-box {
 
-        left: 50%;
+        left:
+            calc(
+                100% + 14px
+            );
 
-        top: calc(100% + 12px);
+        width: 210px;
 
-        transform:
-            translateX(-50%);
-
-        width: 90vw;
-
-        max-width: 300px;
+        max-width: 210px;
     }
 }
 
 
 /* =========================================================
-   VERY SMALL SCREENS
-========================================================= */
+   MOBILE
+   ========================================================= */
 
-@media (max-width: 380px) {
+@media (max-width: 600px) {
 
     .user-page {
-        padding: 12px 10px 20px;
+
+        min-height: 100svh;
+
+        height: auto;
+
+        padding:
+            12px
+            10px
+            35px;
+
+        align-items:
+            flex-start;
+
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+
+    .auth-layout {
+
+        position: relative;
+
+        width: 100%;
+
+        min-height: 100svh;
+
+        height: auto;
+
+        padding:
+            10px
+            0
+            30px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        justify-content: center;
+
+        gap: 14px;
+
+        margin: 0;
+
+        transform: none;
+    }
+
+
+    /* Toggle */
+
+    .toggle-container {
+
+        position: relative;
+
+        width:
+            min(
+                300px,
+                calc(
+                    100vw - 30px
+                )
+            );
+
+        height: 50px;
+
+        margin: 0;
+
+        z-index: 50;
+    }
+
+
+    .toggle-btn {
+
+        height: 42px;
+
+        font-size: 14px;
+    }
+
+
+    /* Card */
+
+    .auth-scene {
+
+        position: relative;
+
+        width:
+            min(
+                340px,
+                calc(
+                    100vw - 30px
+                )
+            );
+
+        height: 455px;
+
+        margin: 0;
+
+        z-index: 10;
+    }
+
+
+    /* Form title */
+
+    .auth-face h2 {
+
+        font-size:
+            clamp(
+                21px,
+                6vw,
+                24px
+            );
+
+        margin-bottom: 13px;
+    }
+
+
+    /* Inputs */
+
+    .auth-face .input-group {
+
+        margin-bottom: 8px;
+    }
+
+
+    .auth-face .input-group label {
+
+        font-size: 11px;
+
+        margin-bottom: 4px;
+    }
+
+
+    .auth-face input {
+
+        height: 39px;
+
+        padding:
+            0 12px;
+
+        font-size: 11px;
+    }
+
+
+    /* Options */
+
+    .auth-face .options {
+
+        margin:
+            7px
+            0
+            9px;
+
+        font-size: 10px;
+    }
+
+
+    /* Button */
+
+    .auth-face .login-btn,
+    .auth-face form > button {
+
+        height: 41px;
+
+        font-size: 12px;
+    }
+
+
+    /* Bottom link */
+
+    .auth-face .signup,
+    .auth-face .login-link {
+
+        margin-top: 9px;
+
+        font-size: 11px;
+    }
+
+
+    /* Messages BELOW CARD */
+
+    .auth-face .login-error,
+    .auth-face .login-success,
+    .auth-face .message-box {
+
+        left: 50%;
+
+        top:
+            calc(
+                100% + 12px
+            );
+
+        width:
+            min(
+                320px,
+                calc(
+                    100vw - 36px
+                )
+            );
+
+        max-width: none;
+
+        min-height: 88px;
+
+        padding: 14px;
+
+        transform:
+            translateX(-50%);
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 420px) {
+
+    .user-page {
+
+        padding:
+            10px
+            8px
+            30px;
+    }
+
+
+    .auth-layout {
+
+        gap: 12px;
+
+        padding:
+            8px
+            0
+            25px;
+    }
+
+
+    .toggle-container {
+
+        width:
+            min(
+                285px,
+                calc(
+                    100vw - 24px
+                )
+            );
+
+        height: 48px;
+    }
+
+
+    .toggle-btn {
+
+        height: 40px;
+
+        font-size: 13px;
+    }
+
+
+    .auth-scene {
+
+        width:
+            calc(
+                100vw - 24px
+            );
+
+        max-width: 340px;
+
+        height: 450px;
+    }
+
+
+    .auth-face {
+
+        padding:
+            19px
+            17px;
+
+        border-radius: 19px;
+    }
+
+
+    .auth-face h2 {
+
+        font-size: 21px;
+
+        margin-bottom: 11px;
+    }
+
+
+    .auth-face input {
+
+        height: 37px;
+
+        font-size: 10.5px;
+    }
+
+
+    .auth-face .login-btn,
+    .auth-face form > button {
+
+        height: 39px;
+
+        min-height: 39px;
+
+        font-size: 11.5px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+    .user-page {
+
+        padding:
+            8px
+            6px
+            25px;
+    }
+
+
+    .auth-layout {
+
+        gap: 10px;
+
+        padding:
+            6px
+            0
+            20px;
+    }
+
+
+    .toggle-container {
+
+        width:
+            calc(
+                100vw - 20px
+            );
+
+        max-width: 270px;
+
+        height: 44px;
+    }
+
+
+    .toggle-btn {
+
+        height: 36px;
+
+        font-size: 12px;
+    }
+
+
+    .auth-scene {
+
+        width:
+            calc(
+                100vw - 20px
+            );
+
+        max-width: 330px;
+
+        height: 435px;
+    }
+
+
+    .auth-face {
+
+        padding:
+            17px
+            14px;
+
+        border-radius: 17px;
+    }
+
+
+    .auth-face h2 {
+
+        font-size: 19px;
+
+        margin-bottom: 9px;
+    }
+
+
+    .auth-face .input-group label {
+
+        font-size: 10px;
+    }
+
+
+    .auth-face input {
+
+        height: 35px;
+
+        padding:
+            0 10px;
+
+        font-size: 10px;
+
+        border-radius: 10px;
+    }
+
+
+    .auth-face .options {
+
+        font-size: 9px;
+
+        margin:
+            6px
+            0
+            8px;
+    }
+
+
+    .auth-face .login-btn,
+    .auth-face form > button {
+
+        height: 37px;
+
+        min-height: 37px;
+
+        font-size: 10.5px;
+
+        border-radius: 10px;
+    }
+
+
+    .auth-face .signup,
+    .auth-face .login-link {
+
+        font-size: 10px;
+
+        margin-top: 7px;
+    }
+}
+
+
+/* =========================================================
+   SHORT DESKTOP / TABLET SCREENS
+   ========================================================= */
+
+@media (
+    max-height: 700px
+) and (
+    min-width: 601px
+) {
+
+    .user-page {
+
+        align-items:
+            flex-start;
+
+        padding-top: 15px;
+
+        padding-bottom: 20px;
+    }
+
+
+    .auth-layout {
+
+        justify-content:
+            flex-start;
+
+        gap: 10px;
+    }
+
+
+    .toggle-container {
+
+        height: 46px;
+    }
+
+
+    .toggle-btn {
+
+        height: 38px;
+    }
+
+
+    .auth-scene {
+
+        height:
+            min(
+                455px,
+                calc(
+                    100svh - 80px
+                )
+            );
+
+        width:
+            min(
+                340px,
+                calc(
+                    (
+                        100svh - 80px
+                    ) * 0.747
+                )
+            );
+    }
+
+
+    .auth-face {
+
+        padding:
+            18px
+            24px;
+    }
+
+
+    .auth-face h2 {
+
+        font-size: 21px;
+
+        margin-bottom: 9px;
+    }
+
+
+    .auth-face .input-group {
+
+        margin-bottom: 6px;
+    }
+
+
+    .auth-face input {
+
+        height: 36px;
+    }
+
+
+    .auth-face .login-btn,
+    .auth-face form > button {
+
+        height: 38px;
+    }
+}
+
+
+/* =========================================================
+   LANDSCAPE MOBILE
+   ========================================================= */
+
+@media (
+    max-height: 560px
+) and (
+    orientation: landscape
+) {
+
+    .user-page {
+
+        align-items:
+            flex-start;
+
+        overflow-y: auto;
+    }
+
+
+    .auth-layout {
+
+        min-height: auto;
+
+        padding-bottom: 35px;
+
+        gap: 8px;
+    }
+
+
+    .toggle-container {
+
+        height: 40px;
+    }
+
+
+    .toggle-btn {
+
+        height: 32px;
+
+        font-size: 12px;
+    }
+
+
+    .auth-scene {
+
+        width:
+            min(
+                300px,
+                calc(
+                    (
+                        100svh - 75px
+                    ) * 0.747
+                )
+            );
+
+        height:
+            min(
+                400px,
+                calc(
+                    100svh - 75px
+                )
+            );
+    }
+
+
+    .auth-face {
+
+        padding:
+            15px
+            20px;
+    }
+
+
+    .auth-face h2 {
+
+        font-size: 19px;
+
+        margin-bottom: 7px;
+    }
+
+
+    .auth-face .input-group {
+
+        margin-bottom: 4px;
+    }
+
+
+    .auth-face .input-group label {
+
+        font-size: 9px;
+
+        margin-bottom: 2px;
+    }
+
+
+    .auth-face input {
+
+        height: 31px;
+
+        font-size: 9px;
+    }
+
+
+    .auth-face .options {
+
+        margin:
+            4px
+            0
+            6px;
+
+        font-size: 8px;
+    }
+
+
+    .auth-face .login-btn,
+    .auth-face form > button {
+
+        height: 33px;
+
+        min-height: 33px;
+
+        font-size: 9px;
+    }
+
+
+    .auth-face .signup,
+    .auth-face .login-link {
+
+        margin-top: 5px;
+
+        font-size: 8px;
+    }
+}
+
+
+/* =========================================================
+   TOUCH DEVICES
+   ========================================================= */
+
+@media (hover: none) {
+
+    .toggle-btn:not(.active):hover {
+
+        background:
+            transparent;
+    }
+
+
+    .auth-face input:hover {
+
+        background:
+            rgba(
+                255,
+                255,
+                255,
+                0.76
+            ) !important;
+    }
+
+
+    .auth-face .login-btn:hover,
+    .auth-face form > button:hover {
+
+        transform: none;
+
+        background-position:
+            0 0;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .auth-card,
+    .toggle-btn,
+    .auth-face input,
+    .auth-face .login-btn,
+    .auth-face form > button {
+
+        transition:
+            none !important;
+    }
+}
+/* =========================================================
+   NEW NAVBAR SPACE + RESPONSIVE OVERRIDE
+   Added after the original CSS so it safely overrides the
+   previous responsive rules.
+   ========================================================= */
+
+:root {
+    --navbar-height-desktop: 80px;
+    --navbar-height-tablet: 72px;
+    --navbar-height-mobile: 64px;
+}
+
+.user-page {
+    padding-top: calc(var(--navbar-height-desktop) + 25px);
+    padding-bottom: 45px;
+    min-height: 100vh;
+    min-height: 100svh;
+}
+
+.auth-layout {
+    width: 100%;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    gap: 16px;
+}
+
+.toggle-container {
+    position: relative;
+    z-index: 100;
+    flex-shrink: 0;
+}
+
+.auth-scene {
+    position: relative;
+    z-index: 10;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+    .user-page {
+        padding-top: calc(var(--navbar-height-tablet) + 20px);
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-bottom: 35px;
     }
 
     .auth-layout {
-        padding: 8px 10px;
-        min-height: auto;
+        width: 100%;
+        gap: 14px;
     }
 
     .toggle-container {
-        width: min(270px, 100%);
+        width: min(300px, calc(100vw - 40px));
+        height: 50px;
+    }
+
+    .toggle-btn {
+        height: 42px;
+        font-size: 14px;
+    }
+
+    .auth-scene {
+        width: min(340px, calc(100vw - 40px));
+        height: 455px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .user-page {
+        padding-top: calc(var(--navbar-height-mobile) + 12px);
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 35px;
+        min-height: 100svh;
+        align-items: flex-start;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    .auth-layout {
+        width: 100%;
+        min-height: calc(100svh - var(--navbar-height-mobile) - 12px);
+        height: auto;
+        padding: 8px 0 30px;
+        gap: 14px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .toggle-container {
+        width: min(300px, calc(100vw - 30px));
+        height: 50px;
+        margin: 0;
+    }
+
+    .toggle-btn {
+        height: 42px;
+        font-size: 14px;
+    }
+
+    .auth-scene {
+        width: min(340px, calc(100vw - 30px));
+        height: 455px;
+        margin: 0;
+    }
+}
+
+/* Small phones */
+@media (max-width: 420px) {
+    .user-page {
+        padding-top: calc(var(--navbar-height-mobile) + 10px);
+        padding-left: 8px;
+        padding-right: 8px;
+        padding-bottom: 30px;
+    }
+
+    .auth-layout {
+        min-height: calc(100svh - var(--navbar-height-mobile) - 10px);
+        padding: 6px 0 25px;
+        gap: 12px;
+    }
+
+    .toggle-container {
+        width: min(285px, calc(100vw - 24px));
+        height: 48px;
+    }
+
+    .toggle-btn {
+        height: 40px;
+        font-size: 13px;
+    }
+
+    .auth-scene {
+        width: calc(100vw - 24px);
+        max-width: 340px;
+        height: 450px;
+    }
+}
+
+/* Very small phones */
+@media (max-width: 360px) {
+    .user-page {
+        padding-top: calc(var(--navbar-height-mobile) + 8px);
+        padding-left: 6px;
+        padding-right: 6px;
+        padding-bottom: 25px;
+    }
+
+    .auth-layout {
+        min-height: calc(100svh - var(--navbar-height-mobile) - 8px);
+        padding: 5px 0 20px;
+        gap: 10px;
+    }
+
+    .toggle-container {
+        width: calc(100vw - 20px);
+        max-width: 270px;
         height: 44px;
     }
 
     .toggle-btn {
         height: 36px;
-        font-size: 13px;
+        font-size: 12px;
     }
 
     .auth-scene {
-        width: 94vw;
-        height: 430px;
+        width: calc(100vw - 20px);
+        max-width: 330px;
+        height: 435px;
+    }
+}
+
+/* Landscape phones */
+@media (max-height: 560px) and (orientation: landscape) {
+    .user-page {
+        padding-top: calc(var(--navbar-height-mobile) + 6px);
+        padding-bottom: 30px;
+        align-items: flex-start;
+        overflow-y: auto;
     }
 
-    .auth-face {
-        padding: 20px 18px;
+    .auth-layout {
+        min-height: auto;
+        padding: 5px 0 35px;
+        gap: 8px;
+        justify-content: flex-start;
     }
 
-    .auth-face h2 {
-        font-size: 22px;
-        margin-bottom: 12px;
-    }
-
-    .auth-face input {
-        height: 38px;
-    }
-
-    .auth-face .login-btn,
-    .auth-face form > button {
+    .toggle-container {
         height: 40px;
+    }
+
+    .toggle-btn {
+        height: 32px;
+        font-size: 12px;
+    }
+
+    .auth-scene {
+        width: min(300px, calc((100svh - 80px) * 0.747));
+        height: min(400px, calc(100svh - 80px));
     }
 }

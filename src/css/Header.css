@@ -3,752 +3,265 @@
    TRANSPARENT DYNAMIC ISLAND HEADER
    ========================================================= */
 
-
-/* =========================================================
-   OLD HEADER RESET
-   ========================================================= */
-
-.header {
-    position: static !important;
-
-    width: auto !important;
-    height: 0 !important;
-
-    margin: 0 !important;
-    padding: 0 !important;
-
-    background: transparent !important;
-
-    border: none !important;
-
-    box-shadow: none !important;
-}
-
-
-/* =========================================================
-   FLOATING HEADER
-   ========================================================= */
-
 .floating-header {
-    position: fixed !important;
-
-    top: 0 !important;
-    left: 0 !important;
-
-    width: 100% !important;
-    height: 0 !important;
-
-    margin: 0 !important;
-    padding: 0 !important;
-
-    z-index: 2147483647 !important;
-
-    pointer-events: none !important;
-
-    visibility: visible !important;
-
-    opacity: 1 !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    z-index: 1000;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
 }
-
 
 /* =========================================================
    TRANSPARENT DYNAMIC ISLAND
    ========================================================= */
 
 .dynamic-island {
-    position: fixed !important;
-
-    top: 18px !important;
-    left: 50% !important;
-
-    transform:
-        translateX(-50%) !important;
-
-    display: flex !important;
-
-    align-items: center !important;
-    justify-content: center !important;
-
-    gap: 4px !important;
-
-    width: max-content !important;
-    height: auto !important;
-
-    padding: 5px !important;
-
-    margin: 0 !important;
-
-    background:
-        rgba(255, 255, 255, 0.12) !important;
-
-    border:
-        1px solid
-        rgba(255, 255, 255, 0.28) !important;
-
-    border-radius:
-        999px !important;
-
-    backdrop-filter:
-        blur(16px)
-        saturate(120%) !important;
-
-    -webkit-backdrop-filter:
-        blur(16px)
-        saturate(120%) !important;
-
+    position: fixed;
+    top: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    padding: 5px;
+    margin: 0;
+    background: rgba(255, 253, 249, 0.72);
+    border: 1px solid rgba(41, 38, 35, 0.12);
+    border-radius: 999px;
+    backdrop-filter: blur(20px) saturate(140%);
+    -webkit-backdrop-filter: blur(20px) saturate(140%);
     box-shadow:
-        0 8px 30px
-        rgba(20, 18, 16, 0.08),
-
-        inset 0 1px 0
-        rgba(255, 255, 255, 0.35) !important;
-
-    isolation:
-        isolate !important;
-
-    overflow:
-        hidden !important;
-
-    pointer-events:
-        auto !important;
-
-    visibility:
-        visible !important;
-
-    opacity:
-        1 !important;
-
+        0 10px 30px rgba(33, 30, 27, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.85);
+    pointer-events: auto;
     transition:
-        background 0.4s ease,
-        box-shadow 0.4s ease,
-        border-color 0.4s ease !important;
+        background 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
 }
-
-
-/* =========================================================
-   ISLAND HOVER
-   ========================================================= */
 
 .dynamic-island:hover {
-    background:
-        rgba(255, 255, 255, 0.18) !important;
-
-    border-color:
-        rgba(255, 255, 255, 0.38) !important;
-
+    background: rgba(255, 253, 249, 0.88);
+    border-color: rgba(41, 38, 35, 0.18);
     box-shadow:
-        0 12px 35px
-        rgba(20, 18, 16, 0.11),
-
-        inset 0 1px 0
-        rgba(255, 255, 255, 0.45) !important;
+        0 14px 38px rgba(33, 30, 27, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.95);
 }
-
 
 /* =========================================================
    ORANGE SLIDING CAPSULE
    ========================================================= */
 
 .nav-slider {
-    position: absolute !important;
-
-    top: 5px !important;
-    left: 5px !important;
-
-    width: 82px !important;
-    height: 38px !important;
-
-    margin: 0 !important;
-    padding: 0 !important;
-
-    border-radius:
-        999px !important;
-
-    background:
-        linear-gradient(
-            135deg,
-            #d97757 0%,
-            #c76647 55%,
-            #bd6043 100%
-        ) !important;
-
-    border:
-        1px solid
-        rgba(255, 255, 255, 0.20) !important;
-
+    position: absolute;
+    inset: 0;
+    border-radius: 999px;
+    background: linear-gradient(
+        135deg,
+        #d97757 0%,
+        #c76647 55%,
+        #bd6043 100%
+    );
+    border: 1px solid rgba(255, 255, 255, 0.22);
     box-shadow:
-        0 8px 21px
-        rgba(217, 119, 87, 0.28),
-
-        0 2px 5px
-        rgba(189, 96, 67, 0.15),
-
-        inset 0 1px 0
-        rgba(255, 255, 255, 0.25) !important;
-
-    z-index:
-        1 !important;
-
-    pointer-events:
-        none !important;
-
-    will-change:
-        transform !important;
-
-    transition:
-        transform 1.3s
-        cubic-bezier(
-            0.22,
-            1,
-            0.36,
-            1
-        ) !important;
+        0 6px 18px rgba(217, 119, 87, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.35);
+    z-index: 1;
+    pointer-events: none;
 }
-
-
-/* =========================================================
-   CAPSULE TOP SHINE
-   ========================================================= */
 
 .nav-slider::before {
     content: "";
-
     position: absolute;
-
     top: 1px;
-    left: 12px;
-    right: 12px;
-
+    left: 10px;
+    right: 10px;
     height: 1px;
-
-    border-radius:
-        999px;
-
-    background:
-        rgba(255, 255, 255, 0.45);
-
-    pointer-events:
-        none;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.5);
+    pointer-events: none;
 }
 
-
 /* =========================================================
-   CAPSULE SOFT LIGHT
+   NAV ITEMS
    ========================================================= */
 
-.nav-slider::after {
-    content: "";
-
-    position: absolute;
-
-    inset: 0;
-
-    border-radius:
-        inherit;
-
-    background:
-        radial-gradient(
-            circle at 30% 15%,
-            rgba(255, 255, 255, 0.20),
-            transparent 45%
-        );
-
-    pointer-events:
-        none;
-}
-
-
-/* =========================================================
-   NORMAL NAV ITEMS
-   ========================================================= */
-
-.nav-item {
-    position: relative !important;
-
-    z-index:
-        3 !important;
-
-    width:
-        82px !important;
-
-    height:
-        38px !important;
-
-    display:
-        flex !important;
-
-    align-items:
-        center !important;
-
-    justify-content:
-        center !important;
-
-    padding:
-        0 14px !important;
-
-    margin:
-        0 !important;
-
-    border:
-        none !important;
-
-    border-radius:
-        999px !important;
-
-    background:
-        transparent !important;
-
-    color:
-        #292623 !important;
-
-    text-decoration:
-        none !important;
-
-    font-family:
-        inherit !important;
-
-    font-size:
-        10px !important;
-
-    font-weight:
-        600 !important;
-
-    line-height:
-        1 !important;
-
-    letter-spacing:
-        -0.01em !important;
-
-    white-space:
-        nowrap !important;
-
-    cursor:
-        pointer !important;
-
+.nav-item,
+.nav-user {
+    position: relative;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 76px;
+    height: 38px;
+    padding: 0 16px;
+    margin: 0;
+    border: none;
+    border-radius: 999px;
+    background: transparent;
+    color: #4a453f;
+    text-decoration: none !important;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: -0.01em;
+    white-space: nowrap;
+    cursor: pointer;
     transition:
-        color 0.45s ease,
-        transform 0.35s ease !important;
+        color 0.25s ease,
+        transform 0.25s ease;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
 }
-
-
-/* =========================================================
-   NAV HOVER
-   ========================================================= */
-
-.nav-item:hover {
-    color:
-        #d97757 !important;
-
-    transform:
-        translateY(-1px) !important;
-}
-
-
-/* =========================================================
-   ACTIVE NAV ITEM
-   ========================================================= */
-
-.nav-item.active {
-    color:
-        #ffffff !important;
-
-    font-weight:
-        650 !important;
-}
-
-
-/* =========================================================
-   USER ITEM
-   ========================================================= */
 
 .nav-user {
-    position:
-        relative !important;
-
-    z-index:
-        3 !important;
-
-    width:
-        82px !important;
-
-    height:
-        38px !important;
-
-    display:
-        flex !important;
-
-    align-items:
-        center !important;
-
-    justify-content:
-        center !important;
-
-    padding:
-        0 !important;
-
-    margin:
-        0 !important;
-
-    border:
-        none !important;
-
-    border-radius:
-        999px !important;
-
-    background:
-        transparent !important;
-
-    color:
-        #292623 !important;
-
-    text-decoration:
-        none !important;
-
-    font-size:
-        17px !important;
-
-    line-height:
-        1 !important;
-
-    cursor:
-        pointer !important;
-
-    transition:
-        color 0.45s ease,
-        transform 0.35s ease !important;
+    min-width: 44px;
+    padding: 0 12px;
+    font-size: 18px;
 }
 
+.nav-label,
+.nav-icon {
+    position: relative;
+    z-index: 3;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
 
-/* =========================================================
-   USER HOVER
-   ========================================================= */
-
+.nav-item:hover,
 .nav-user:hover {
-    color:
-        #d97757 !important;
-
-    transform:
-        translateY(-1px) !important;
+    color: #b8654a;
 }
 
-
-/* =========================================================
-   ACTIVE USER
-   ========================================================= */
-
+.nav-item.active,
 .nav-user.active {
-    color:
-        #ffffff !important;
+    color: #ffffff !important;
+    font-weight: 650;
 }
-
-
-/* =========================================================
-   USER ICON
-   ========================================================= */
 
 .nav-user svg {
-    width:
-        18px !important;
-
-    height:
-        18px !important;
-
-    display:
-        block !important;
-
-    transition:
-        transform 0.45s
-        cubic-bezier(
-            0.22,
-            1,
-            0.36,
-            1
-        ),
-
-        color 0.3s ease !important;
+    width: 19px;
+    height: 19px;
+    display: block;
+    transition: transform 0.3s ease;
 }
-
-
-/* =========================================================
-   USER ICON HOVER
-   ========================================================= */
 
 .nav-user:hover svg {
-    transform:
-        scale(1.10)
-        rotate(-5deg) !important;
+    transform: scale(1.12);
 }
-
-
-/* =========================================================
-   ACTIVE USER ICON
-   ========================================================= */
 
 .nav-user.active svg {
-    transform:
-        scale(1.05) !important;
+    transform: scale(1.05);
 }
-
-
-/* =========================================================
-   REMOVE OLD EFFECTS
-   ========================================================= */
-
-.nav-item::before,
-.nav-item::after,
-.nav-user::before,
-.nav-user::after {
-    content:
-        none !important;
-
-    display:
-        none !important;
-}
-
-
-/* =========================================================
-   HERO STACKING
-   ========================================================= */
-
-.hero {
-    position:
-        relative !important;
-
-    z-index:
-        1 !important;
-}
-
-
-.hero-image {
-    position:
-        absolute !important;
-
-    z-index:
-        0 !important;
-}
-
-
-.hero-overlay {
-    position:
-        relative !important;
-
-    z-index:
-        2 !important;
-}
-
-
-/* =========================================================
-   PREVENT HEADER GAP
-   ========================================================= */
-
-.floating-header + * {
-    margin-top:
-        0 !important;
-}
-
 
 /* =========================================================
    TABLET
    ========================================================= */
 
 @media (max-width: 800px) {
-
     .dynamic-island {
-        top:
-            14px !important;
-
-        gap:
-            3px !important;
-
-        padding:
-            5px !important;
+        top: 14px;
+        gap: 3px;
+        padding: 4px;
     }
 
-
-    .nav-item,
-    .nav-user {
-        width:
-            72px !important;
-
-        height:
-            36px !important;
+    .nav-item {
+        min-width: 68px;
+        height: 36px;
+        padding: 0 12px;
+        font-size: 11px;
     }
-
-
-    .nav-slider {
-        top:
-            5px !important;
-
-        left:
-            5px !important;
-
-        width:
-            72px !important;
-
-        height:
-            36px !important;
-    }
-
 
     .nav-user {
-        font-size:
-            16px !important;
+        min-width: 40px;
+        height: 36px;
+        padding: 0 10px;
     }
-
 
     .nav-user svg {
-        width:
-            17px !important;
-
-        height:
-            17px !important;
+        width: 17px;
+        height: 17px;
     }
 }
-
 
 /* =========================================================
    MOBILE
    ========================================================= */
 
 @media (max-width: 550px) {
-
     .dynamic-island {
-        top:
-            12px !important;
-
-        gap:
-            2px !important;
-
-        padding:
-            4px !important;
+        top: 10px;
+        gap: 2px;
+        padding: 3px;
+        max-width: calc(100vw - 20px);
     }
-
-
-    .nav-item,
-    .nav-user {
-        width:
-            62px !important;
-
-        height:
-            34px !important;
-    }
-
 
     .nav-item {
-        padding:
-            0 8px !important;
-
-        font-size:
-            8px !important;
+        min-width: 58px;
+        height: 34px;
+        padding: 0 10px;
+        font-size: 10.5px;
     }
-
 
     .nav-user {
-        font-size:
-            15px !important;
+        min-width: 36px;
+        height: 34px;
+        padding: 0 8px;
     }
-
 
     .nav-user svg {
-        width:
-            16px !important;
-
-        height:
-            16px !important;
-    }
-
-
-    .nav-slider {
-        top:
-            4px !important;
-
-        left:
-            4px !important;
-
-        width:
-            62px !important;
-
-        height:
-            34px !important;
+        width: 16px;
+        height: 16px;
     }
 }
-
 
 /* =========================================================
    VERY SMALL MOBILE
    ========================================================= */
 
-@media (max-width: 400px) {
-
+@media (max-width: 380px) {
     .dynamic-island {
-        top:
-            10px !important;
-
-        padding:
-            4px !important;
-
-        max-width:
-            calc(100vw - 16px) !important;
+        top: 8px;
+        padding: 3px;
+        gap: 1px;
     }
-
-
-    .nav-item,
-    .nav-user {
-        width:
-            55px !important;
-
-        height:
-            32px !important;
-    }
-
 
     .nav-item {
-        font-size:
-            8px !important;
+        min-width: 52px;
+        height: 32px;
+        padding: 0 8px;
+        font-size: 9.5px;
     }
 
-
-    .nav-slider {
-        top:
-            4px !important;
-
-        left:
-            4px !important;
-
-        width:
-            55px !important;
-
-        height:
-            32px !important;
-    }
-
-
-    .nav-user svg {
-        width:
-            15px !important;
-
-        height:
-            15px !important;
+    .nav-user {
+        min-width: 34px;
+        height: 32px;
+        padding: 0 6px;
     }
 }
-
 
 /* =========================================================
    REDUCED MOTION
    ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
-
     .nav-slider {
-        transition:
-            none !important;
+        transition: none !important;
     }
-
 
     .nav-item,
     .nav-user,
     .nav-user svg {
-        transition:
-            none !important;
+        transition: none !important;
     }
-}
+}

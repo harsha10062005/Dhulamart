@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Footer } from "../components/footer";
 import { Header } from "../components/header";
 import "../css/About.css";
@@ -81,10 +82,10 @@ export const About = () => {
                             variants={reveal}
                         >
 
-                            <a href="/items">
+                            <Link to="/items">
                                 Explore Products
                                 <span>↗</span>
-                            </a>
+                            </Link>
 
                             <div className="hero-status">
                                 <span></span>
@@ -760,12 +761,12 @@ export const About = () => {
                             for you.
                         </p>
 
-                        <a href="/items">
+                        <Link to="/items">
                             Start Exploring
                             <span>
                                 →
                             </span>
-                        </a>
+                        </Link>
 
                     </motion.div>
 

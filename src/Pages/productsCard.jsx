@@ -124,14 +124,15 @@ export const ProductsCards = ({
                                             ? "active"
                                             : ""
                                     }
-                                    onClick={() =>
-                                       { setPage(index + 1),
-                                        window.scrollTo({
-                                          top:700,
-                                          behavior:'smooth',
-                                        })
-                                       }
-                                    }
+                                    onClick={() => {
+                                        setPage(index + 1);
+                                        const el = document.getElementById("products-list");
+                                        if (el) {
+                                            el.scrollIntoView({ behavior: "smooth", block: "start" });
+                                        } else {
+                                            window.scrollTo({ top: 0, behavior: "smooth" });
+                                        }
+                                    }}
                                 >
                                     {index + 1}
                                 </button>
