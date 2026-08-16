@@ -1,246 +1,1235 @@
 /* =========================================================
-   DHULA MART - PRODUCT DETAILS
-   RESPONSIVE PRODUCT DETAILS PAGE
+   DHULA MART — PRODUCT DETAILS
+   PREMIUM FABRIC / TEXTILE DESIGN
+   FULL RESPONSIVE VERSION
    ========================================================= */
 
 .product-details-page {
-    --bg: #f7f5f0;
-    --surface: #fffdf9;
-    --dark: #211e1b;
-    --text: #211e1b;
-    --text-soft: #5c554e;
-    --text-muted: #8e867d;
+    --bg: #f5eee3;
+    --surface: #fffaf2;
+    --surface-soft: #f0e4d3;
+
+    --dark: #211713;
+    --text: #33231d;
+    --text-soft: #68564b;
+    --text-muted: #958176;
 
     --clay: #b8654a;
-    --clay-dark: #9a5039;
-    --clay-light: #faece6;
-    --gold: #d4a24c;
+    --clay-dark: #8f4936;
+    --clay-deep: #683225;
+    --clay-light: #f5ded4;
 
-    --border: rgba(41, 38, 35, 0.12);
+    --gold: #d4a24c;
+    --gold-light: #e8cd92;
+
+    --border:
+        rgba(76, 48, 36, 0.13);
+
+    --fabric-line:
+        rgba(78, 48, 35, 0.025);
+
+    --white:
+        #fffaf2;
 
     min-height: 100vh;
-    padding: clamp(100px, 12vh, 140px) clamp(1rem, 4vw, 3rem) 60px;
+
+    padding:
+        clamp(105px, 12vh, 145px)
+        clamp(0.8rem, 4vw, 4rem)
+        60px;
+
     display: flex;
+
     align-items: center;
     justify-content: center;
+
+    position: relative;
+
+    overflow-x: clip;
+
     background:
-        radial-gradient(circle at 85% 15%, rgba(184, 101, 74, 0.08), transparent 45%),
-        linear-gradient(135deg, #fbf9f5 0%, #f3efe8 100%);
+        radial-gradient(
+            circle at 85% 10%,
+            rgba(184, 101, 74, 0.13),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 10% 90%,
+            rgba(212, 162, 76, 0.08),
+            transparent 32%
+        ),
+        repeating-linear-gradient(
+            0deg,
+            var(--fabric-line) 0px,
+            var(--fabric-line) 1px,
+            transparent 1px,
+            transparent 6px
+        ),
+        repeating-linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.18) 0px,
+            rgba(255, 255, 255, 0.18) 1px,
+            transparent 1px,
+            transparent 8px
+        ),
+        linear-gradient(
+            135deg,
+            #fbf7ef 0%,
+            #eee2d1 100%
+        );
+
     color: var(--text);
-    font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+
+    font-family:
+        "Inter",
+        -apple-system,
+        BlinkMacSystemFont,
+        sans-serif;
+
     box-sizing: border-box;
 }
 
-.product-details-page * {
+
+/* =========================================================
+   GLOBAL BOX SIZING
+   ========================================================= */
+
+.product-details-page *,
+.product-details-page *::before,
+.product-details-page *::after {
     box-sizing: border-box;
 }
+
+
+/* =========================================================
+   PAGE FABRIC OVERLAY
+   ========================================================= */
+
+.product-details-page::before {
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 0;
+
+    pointer-events: none;
+
+    background:
+        repeating-linear-gradient(
+            45deg,
+            transparent 0px,
+            transparent 4px,
+            rgba(78, 48, 35, 0.012) 4px,
+            rgba(78, 48, 35, 0.012) 5px
+        ),
+        repeating-linear-gradient(
+            -45deg,
+            transparent 0px,
+            transparent 6px,
+            rgba(255, 255, 255, 0.025) 6px,
+            rgba(255, 255, 255, 0.025) 7px
+        );
+
+    opacity: 0.7;
+
+    mix-blend-mode: multiply;
+}
+
+
+/* =========================================================
+   DECORATIVE GLOW
+   ========================================================= */
+
+.product-details-page::after {
+    content: "";
+
+    position: fixed;
+
+    width: 480px;
+    height: 480px;
+
+    right: -180px;
+    bottom: -180px;
+
+    z-index: 0;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(184, 101, 74, 0.10),
+            transparent 70%
+        );
+}
+
+
+/* =========================================================
+   MAIN PRODUCT CONTAINER
+   ========================================================= */
 
 .product-details-container {
     position: relative;
+
     z-index: 2;
+
     width: 100%;
-    max-width: 1100px;
+
+    max-width: 1180px;
+
     display: grid;
-    grid-template-columns: 1fr 1.15fr;
-    gap: clamp(24px, 4vw, 50px);
-    padding: clamp(20px, 4vw, 40px);
-    border: 1px solid rgba(255, 255, 255, 0.85);
-    border-radius: 28px;
-    background: rgba(255, 253, 249, 0.75);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    box-shadow: 0 20px 60px rgba(33, 30, 27, 0.08);
+
+    grid-template-columns:
+        minmax(0, 0.95fr)
+        minmax(0, 1.05fr);
+
+    gap:
+        clamp(
+            28px,
+            4vw,
+            55px
+        );
+
+    padding:
+        clamp(
+            18px,
+            4vw,
+            38px
+        );
+
+    border:
+        1px solid
+        rgba(126, 66, 49, 0.13);
+
+    border-radius:
+        30px;
+
+    background:
+        rgba(255, 250, 242, 0.72);
+
+    backdrop-filter:
+        blur(22px);
+
+    -webkit-backdrop-filter:
+        blur(22px);
+
+    box-shadow:
+        0 25px 80px
+        rgba(54, 33, 25, 0.11),
+        inset 0 1px 0
+        rgba(255, 255, 255, 0.82);
+
+    overflow: hidden;
 }
 
-/* Image Showcase */
+
+/* =========================================================
+   CONTAINER FABRIC
+   ========================================================= */
+
+.product-details-container::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: -1;
+
+    pointer-events: none;
+
+    background:
+        repeating-linear-gradient(
+            0deg,
+            rgba(78, 48, 35, 0.018) 0px,
+            rgba(78, 48, 35, 0.018) 1px,
+            transparent 1px,
+            transparent 6px
+        ),
+        repeating-linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.16) 0px,
+            rgba(255, 255, 255, 0.16) 1px,
+            transparent 1px,
+            transparent 8px
+        );
+}
+
+
+/* =========================================================
+   IMAGE SHOWCASE
+   ========================================================= */
+
 .product-image {
     position: relative;
+
     width: 100%;
-    min-height: 380px;
+
+    min-height:
+        clamp(
+            380px,
+            45vw,
+            520px
+        );
+
     display: flex;
+
     align-items: center;
     justify-content: center;
-    border-radius: 20px;
-    background: radial-gradient(circle at 50% 50%, #ffffff 0%, #f4eee6 100%);
-    border: 1px solid var(--border);
+
+    padding:
+        clamp(
+            18px,
+            4vw,
+            32px
+        );
+
     overflow: hidden;
-    padding: 20px;
+
+    border:
+        1px solid
+        rgba(126, 66, 49, 0.12);
+
+    border-radius:
+        23px;
+
+    background:
+        radial-gradient(
+            circle at 50% 42%,
+            #fffdf9 0%,
+            #f4eadc 55%,
+            #eadbc8 100%
+        );
+
+    box-shadow:
+        inset 0 1px 0
+        rgba(255, 255, 255, 0.85),
+        0 12px 35px
+        rgba(66, 40, 29, 0.07);
 }
 
+
+/* =========================================================
+   IMAGE FABRIC TEXTURE
+   ========================================================= */
+
+.product-image::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 1;
+
+    pointer-events: none;
+
+    background:
+        repeating-linear-gradient(
+            0deg,
+            rgba(80, 46, 33, 0.024) 0px,
+            rgba(80, 46, 33, 0.024) 1px,
+            transparent 1px,
+            transparent 6px
+        ),
+        repeating-linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.25) 0px,
+            rgba(255, 255, 255, 0.25) 1px,
+            transparent 1px,
+            transparent 8px
+        );
+
+    mix-blend-mode:
+        multiply;
+
+    opacity: 0.75;
+}
+
+
+/* =========================================================
+   IMAGE LIGHT
+   ========================================================= */
+
+.product-image::after {
+    content: "";
+
+    position: absolute;
+
+    width: 280px;
+    height: 280px;
+
+    top: -100px;
+    right: -80px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 255, 255, 0.65),
+            transparent 70%
+        );
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+
+/* =========================================================
+   PRODUCT IMAGE
+   ========================================================= */
+
 .product-image img {
+    position: relative;
+
+    z-index: 3;
+
+    display: block;
+
+    width: auto;
+
     max-width: 100%;
-    max-height: 360px;
+
+    max-height:
+        clamp(
+            300px,
+            38vw,
+            430px
+        );
+
     object-fit: contain;
-    filter: drop-shadow(0 15px 25px rgba(33, 30, 27, 0.12));
-    transition: transform 0.4s ease;
+
+    filter:
+        drop-shadow(
+            0 22px 28px
+            rgba(33, 30, 27, 0.15)
+        );
+
+    transition:
+        transform 0.55s cubic-bezier(
+            0.2,
+            0.75,
+            0.25,
+            1
+        ),
+        filter 0.4s ease;
 }
 
 .product-image:hover img {
-    transform: scale(1.06);
+    transform:
+        scale(1.045)
+        translateY(-4px);
+
+    filter:
+        drop-shadow(
+            0 28px 38px
+            rgba(33, 30, 27, 0.19)
+        );
 }
 
-/* Product Content */
+
+/* =========================================================
+   PRODUCT CONTENT
+   ========================================================= */
+
 .product-content {
+    position: relative;
+
     display: flex;
+
     flex-direction: column;
+
     justify-content: center;
-    gap: 12px;
+
+    gap: 13px;
+
+    min-width: 0;
 }
+
+
+/* =========================================================
+   CATEGORY
+   ========================================================= */
 
 .product-category {
     align-self: flex-start;
-    padding: 6px 14px;
-    border-radius: 50px;
-    background: var(--clay-light);
-    color: var(--clay-dark);
-    font-size: 0.78rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    min-height: 31px;
+
+    padding:
+        6px 13px;
+
+    border:
+        1px solid
+        rgba(154, 80, 57, 0.13);
+
+    border-radius: 999px;
+
+    background:
+        rgba(245, 222, 212, 0.78);
+
+    color:
+        var(--clay-dark);
+
+    font-family:
+        "IBM Plex Mono",
+        monospace;
+
+    font-size: 0.65rem;
+
+    font-weight: 600;
+
+    letter-spacing: 0.1em;
+
     text-transform: uppercase;
 }
+
+
+/* =========================================================
+   PRODUCT TITLE
+   ========================================================= */
 
 .product-content h1 {
     margin: 0;
+
+    max-width: 650px;
+
     color: var(--dark);
-    font-size: clamp(1.8rem, 3.5vw, 2.5rem);
-    font-weight: 700;
-    line-height: 1.15;
-    letter-spacing: -0.03em;
+
+    font-family:
+        "Fraunces",
+        Georgia,
+        serif;
+
+    font-size:
+        clamp(
+            2rem,
+            4vw,
+            3.25rem
+        );
+
+    font-weight: 600;
+
+    line-height: 1.03;
+
+    letter-spacing: -0.045em;
 }
+
+
+/* =========================================================
+   DESCRIPTION
+   ========================================================= */
 
 .product-description {
     margin: 0;
-    color: var(--text-soft);
-    font-size: 0.95rem;
-    line-height: 1.65;
+
+    max-width: 610px;
+
+    color:
+        var(--text-soft);
+
+    font-size:
+        clamp(
+            0.86rem,
+            1.2vw,
+            0.98rem
+        );
+
+    line-height: 1.8;
 }
+
+
+/* =========================================================
+   RATING
+   ========================================================= */
 
 .product-rating {
     display: inline-flex;
+
     align-items: center;
-    gap: 4px;
+
+    gap: 5px;
+
     align-self: flex-start;
-    padding: 6px 12px;
-    border-radius: 8px;
-    background: rgba(212, 162, 76, 0.12);
-    color: #a1701b;
-    font-size: 0.88rem;
+
+    min-height: 32px;
+
+    padding:
+        6px 11px;
+
+    border:
+        1px solid
+        rgba(212, 162, 76, 0.16);
+
+    border-radius: 9px;
+
+    background:
+        rgba(212, 162, 76, 0.11);
+
+    color:
+        #9b6d1b;
+
+    font-size: 0.78rem;
+
     font-weight: 700;
 }
 
+
+/* =========================================================
+   PRICE
+   ========================================================= */
+
 .product-price {
-    margin: 4px 0 0;
-    color: var(--clay-dark);
-    font-size: clamp(1.8rem, 3vw, 2.2rem);
-    font-weight: 800;
-    letter-spacing: -0.02em;
+    margin:
+        3px 0 2px;
+
+    color:
+        var(--clay-dark);
+
+    font-family:
+        "Fraunces",
+        Georgia,
+        serif;
+
+    font-size:
+        clamp(
+            2rem,
+            4vw,
+            2.7rem
+        );
+
+    font-weight: 600;
+
+    line-height: 1;
+
+    letter-spacing:
+        -0.035em;
 }
 
-/* Product Specs Info */
+
+/* =========================================================
+   PRODUCT SPECS
+   ========================================================= */
+
 .product-info {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    padding: 14px;
-    border-radius: 14px;
-    background: rgba(255, 255, 255, 0.6);
-    border: 1px solid var(--border);
-    margin: 8px 0;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 1px;
+
+    margin:
+        8px 0;
+
+    padding: 1px;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius:
+        16px;
+
+    background:
+        rgba(100, 64, 48, 0.10);
 }
+
+
+/* =========================================================
+   SPEC ITEM
+   ========================================================= */
 
 .product-info p {
     margin: 0;
+
+    min-height: 72px;
+
     display: flex;
+
     flex-direction: column;
-    gap: 2px;
-    font-size: 0.88rem;
-    font-weight: 600;
-    color: var(--dark);
+
+    justify-content: center;
+
+    gap: 4px;
+
+    padding:
+        11px;
+
+    background:
+        rgba(255, 253, 249, 0.70);
+
+    color:
+        var(--dark);
+
+    font-size:
+        0.82rem;
+
+    font-weight: 700;
+
+    line-height: 1.3;
 }
 
 .product-info p span {
-    font-size: 0.72rem;
-    font-weight: 700;
-    color: var(--text-muted);
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
+    font-family:
+        "IBM Plex Mono",
+        monospace;
+
+    font-size:
+        0.57rem;
+
+    font-weight: 600;
+
+    color:
+        var(--text-muted);
+
+    text-transform:
+        uppercase;
+
+    letter-spacing:
+        0.08em;
 }
 
-/* Buttons */
+
+/* =========================================================
+   BUTTON AREA
+   ========================================================= */
+
 .product-buttons {
     display: flex;
-    align-items: center;
-    gap: 14px;
+
+    align-items: stretch;
+
+    gap: 11px;
+
     margin-top: 8px;
 }
 
+
+/* =========================================================
+   BUTTON BASE
+   ========================================================= */
+
 .product-buttons button {
+    position: relative;
+
     flex: 1;
-    height: 48px;
-    border-radius: 12px;
-    font-family: inherit;
-    font-size: 0.95rem;
-    font-weight: 600;
+
+    min-width: 0;
+
+    min-height: 52px;
+
+    padding:
+        0.75rem
+        1rem;
+
+    border-radius:
+        13px;
+
+    font-family:
+        "Inter",
+        sans-serif;
+
+    font-size:
+        0.87rem;
+
+    font-weight:
+        700;
+
     cursor: pointer;
-    transition: all 0.25s ease;
+
+    transition:
+        transform 0.28s ease,
+        box-shadow 0.28s ease,
+        background 0.28s ease,
+        border-color 0.28s ease;
 }
 
+
+/* =========================================================
+   BUY BUTTON
+   ========================================================= */
+
 .buy-btn {
-    border: none;
-    background: linear-gradient(135deg, var(--clay), var(--clay-dark));
-    color: #ffffff;
-    box-shadow: 0 8px 20px rgba(184, 101, 74, 0.3);
+    overflow: hidden;
+
+    border:
+        1px solid
+        var(--clay-dark);
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--clay),
+            var(--clay-dark)
+        );
+
+    color:
+        #fff;
+
+    box-shadow:
+        0 10px 25px
+        rgba(184, 101, 74, 0.28);
+}
+
+.buy-btn::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -120%;
+
+    width: 70%;
+    height: 100%;
+
+    transform:
+        skewX(-20deg);
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.25),
+            transparent
+        );
+
+    transition:
+        left 0.7s ease;
 }
 
 .buy-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 12px 25px rgba(184, 101, 74, 0.4);
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 15px 32px
+        rgba(184, 101, 74, 0.38);
 }
 
+.buy-btn:hover::before {
+    left: 140%;
+}
+
+
+/* =========================================================
+   CART BUTTON
+   ========================================================= */
+
 .cart-btn {
-    border: 1px solid var(--border);
-    background: var(--surface);
-    color: var(--text);
+    border:
+        1px solid
+        rgba(126, 66, 49, 0.16);
+
+    background:
+        rgba(255, 253, 249, 0.78);
+
+    color:
+        var(--text);
+
+    backdrop-filter:
+        blur(8px);
+
+    -webkit-backdrop-filter:
+        blur(8px);
 }
 
 .cart-btn:hover {
-    border-color: var(--clay);
-    background: var(--clay-light);
-    color: var(--clay-dark);
-    transform: translateY(-2px);
+    transform:
+        translateY(-3px);
+
+    border-color:
+        rgba(168, 93, 69, 0.35);
+
+    background:
+        var(--clay-light);
+
+    color:
+        var(--clay-dark);
+
+    box-shadow:
+        0 12px 26px
+        rgba(92, 53, 39, 0.09);
 }
 
-@media (max-width: 860px) {
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 950px) {
+
+    .product-details-page {
+        padding-top:
+            105px;
+    }
+
     .product-details-container {
-        grid-template-columns: 1fr;
-        gap: 24px;
-        border-radius: 20px;
+        grid-template-columns:
+            1fr;
+
+        max-width:
+            720px;
+
+        gap:
+            28px;
     }
 
     .product-image {
-        min-height: 300px;
+        min-height:
+            430px;
     }
 
     .product-image img {
-        max-height: 280px;
+        max-height:
+            370px;
+    }
+
+    .product-content {
+        padding:
+            0
+            5px
+            5px;
+    }
+
+    .product-content h1 {
+        font-size:
+            clamp(
+                2rem,
+                5vw,
+                3rem
+            );
     }
 }
 
-@media (max-width: 480px) {
+
+/* =========================================================
+   TABLET SMALL
+   ========================================================= */
+
+@media (max-width: 700px) {
+
     .product-details-page {
-        padding-top: 90px;
-        padding-bottom: 40px;
+        padding:
+            95px
+            0.8rem
+            45px;
+    }
+
+    .product-details-container {
+        padding:
+            15px;
+
+        border-radius:
+            23px;
+
+        gap:
+            22px;
+    }
+
+    .product-image {
+        min-height:
+            360px;
+
+        border-radius:
+            19px;
+    }
+
+    .product-image img {
+        max-height:
+            310px;
+    }
+
+    .product-content {
+        gap:
+            11px;
+    }
+
+    .product-price {
+        font-size:
+            2.25rem;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 560px) {
+
+    .product-details-page {
+        min-height:
+            100svh;
+
+        padding:
+            90px
+            0.65rem
+            35px;
+    }
+
+    .product-details-container {
+        padding:
+            11px;
+
+        border-radius:
+            20px;
+
+        gap:
+            20px;
+
+        background:
+            rgba(255, 250, 242, 0.78);
+    }
+
+    .product-image {
+        min-height:
+            315px;
+
+        padding:
+            14px;
+
+        border-radius:
+            17px;
+    }
+
+    .product-image img {
+        max-width:
+            92%;
+
+        max-height:
+            270px;
+    }
+
+    .product-content h1 {
+        font-size:
+            clamp(
+                1.85rem,
+                9vw,
+                2.5rem
+            );
+
+        line-height:
+            1.04;
+    }
+
+    .product-description {
+        font-size:
+            0.83rem;
+
+        line-height:
+            1.7;
+    }
+
+    .product-rating {
+        font-size:
+            0.72rem;
+    }
+
+    .product-price {
+        font-size:
+            2rem;
     }
 
     .product-info {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        border-radius:
+            14px;
+    }
+
+    .product-info p {
+        min-height:
+            66px;
+
+        padding:
+            10px;
+
+        font-size:
+            0.76rem;
+    }
+
+    .product-info p span {
+        font-size:
+            0.52rem;
     }
 
     .product-buttons {
-        flex-direction: column;
+        flex-direction:
+            column;
+
+        gap:
+            9px;
+
+        margin-top:
+            5px;
     }
 
     .product-buttons button {
-        width: 100%;
+        width:
+            100%;
+
+        min-height:
+            50px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    .product-details-page {
+        padding-top:
+            82px;
+    }
+
+    .product-details-container {
+        padding:
+            9px;
+    }
+
+    .product-image {
+        min-height:
+            275px;
+    }
+
+    .product-image img {
+        max-height:
+            230px;
+    }
+
+    .product-content h1 {
+        font-size:
+            1.75rem;
+    }
+
+    .product-price {
+        font-size:
+            1.85rem;
+    }
+
+    .product-info p {
+        min-height:
+            61px;
+
+        font-size:
+            0.7rem;
+    }
+
+    .product-buttons button {
+        min-height:
+            48px;
+
+        font-size:
+            0.82rem;
+    }
+}
+
+
+/* =========================================================
+   LANDSCAPE MOBILE
+   ========================================================= */
+
+@media (
+    orientation: landscape
+) and (
+    max-height: 600px
+) {
+
+    .product-details-page {
+        padding-top:
+            80px;
+    }
+
+    .product-details-container {
+        grid-template-columns:
+            0.9fr
+            1.1fr;
+
+        max-width:
+            1000px;
+
+        gap:
+            20px;
+    }
+
+    .product-image {
+        min-height:
+            330px;
+    }
+
+    .product-image img {
+        max-height:
+            280px;
+    }
+
+    .product-content h1 {
+        font-size:
+            1.8rem;
+    }
+
+    .product-description {
+        font-size:
+            0.78rem;
+    }
+
+    .product-info p {
+        min-height:
+            55px;
+    }
+
+    .product-buttons button {
+        min-height:
+            44px;
+    }
+}
+
+
+/* =========================================================
+   TOUCH DEVICES
+   ========================================================= */
+
+@media (hover: none) {
+
+    .product-image:hover img {
+        transform:
+            none;
+    }
+
+    .buy-btn:hover,
+    .cart-btn:hover {
+        transform:
+            none;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .product-image img,
+    .product-buttons button,
+    .buy-btn::before {
+        transition:
+            none !important;
     }
 }

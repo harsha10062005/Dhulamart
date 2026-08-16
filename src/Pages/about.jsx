@@ -3,6 +3,21 @@ import { Footer } from "../components/footer";
 import { Header } from "../components/header";
 import "../css/About.css";
 import { motion } from "framer-motion";
+import {
+    ShoppingBag,
+    Smartphone,
+    Shirt,
+    Gem,
+    Search,
+    Sparkles,
+    Home,
+    Heart,
+    ShieldCheck,
+    Lightbulb,
+    Users,
+    ArrowRight,
+    Check,
+} from "lucide-react";
 
 export const About = () => {
 
@@ -30,13 +45,34 @@ export const About = () => {
         }
     };
 
+    const categories = [
+        {
+            icon: <Smartphone />,
+            title: "Electronics",
+            description: "Technology & gadgets"
+        },
+        {
+            icon: <Shirt />,
+            title: "Fashion",
+            description: "Styles for everyday"
+        },
+        {
+            icon: <Home />,
+            title: "Home & Living",
+            description: "Make your space better"
+        },
+        {
+            icon: <Gem />,
+            title: "Accessories",
+            description: "Complete your style"
+        }
+    ];
+
     return (
         <>
             <Header />
 
             <main className="about-page">
-
-                {/* ================= HERO ================= */}
 
                 <section className="about-hero">
 
@@ -53,7 +89,7 @@ export const About = () => {
                             className="eyebrow"
                             variants={reveal}
                         >
-                            WELCOME TO DHULA MART
+                            WELCOME TO NEXAMART
                         </motion.span>
 
                         <motion.h1 variants={reveal}>
@@ -84,7 +120,9 @@ export const About = () => {
 
                             <Link to="/items">
                                 Explore Products
-                                <span>↗</span>
+                                <span>
+                                    <ArrowRight size={17} />
+                                </span>
                             </Link>
 
                             <div className="hero-status">
@@ -96,8 +134,6 @@ export const About = () => {
 
                     </motion.div>
 
-
-                    {/* ================= HERO ORBIT ================= */}
 
                     <motion.div
                         className="hero-stage"
@@ -131,7 +167,10 @@ export const About = () => {
                                 ease: "easeInOut"
                             }}
                         >
-                            🛒
+                            <ShoppingBag
+                                size={54}
+                                strokeWidth={1.5}
+                            />
                         </motion.div>
 
 
@@ -147,7 +186,10 @@ export const About = () => {
                                 ease: "easeInOut"
                             }}
                         >
-                            📱
+                            <Smartphone
+                                size={30}
+                                strokeWidth={1.5}
+                            />
                         </motion.div>
 
 
@@ -163,7 +205,10 @@ export const About = () => {
                                 ease: "easeInOut"
                             }}
                         >
-                            👕
+                            <Shirt
+                                size={30}
+                                strokeWidth={1.5}
+                            />
                         </motion.div>
 
 
@@ -179,14 +224,17 @@ export const About = () => {
                                 ease: "easeInOut"
                             }}
                         >
-                            💎
+                            <Gem
+                                size={30}
+                                strokeWidth={1.5}
+                            />
                         </motion.div>
 
 
                         <div className="hero-card">
 
                             <span>
-                                DHULA MART
+                                NEXAMART
                             </span>
 
                             <strong>
@@ -205,7 +253,6 @@ export const About = () => {
 
                 </section>
 
-                {/* ================= STORY ================= */}
 
                 <motion.section
                     className="story-section"
@@ -246,7 +293,7 @@ export const About = () => {
                             </h3>
 
                             <div className="story-symbol">
-                                ✦
+                                <Sparkles size={30} />
                             </div>
 
                         </motion.div>
@@ -299,7 +346,7 @@ export const About = () => {
                         </h2>
 
                         <p>
-                            Dhula Mart started with a simple thought:
+                            NexaMart started with a simple thought:
                             shopping doesn't need to feel complicated.
                         </p>
 
@@ -333,8 +380,6 @@ export const About = () => {
 
                 </motion.section>
 
-
-                {/* ================= INTERACTIVE PROCESS ================= */}
 
                 <section className="interactive-section">
 
@@ -381,7 +426,7 @@ export const About = () => {
                             </span>
 
                             <div className="process-icon">
-                                🔎
+                                <Search />
                             </div>
 
                             <h3>
@@ -394,7 +439,7 @@ export const About = () => {
                             </p>
 
                             <b>
-                                →
+                                <ArrowRight />
                             </b>
 
                         </motion.div>
@@ -412,7 +457,7 @@ export const About = () => {
                             </span>
 
                             <div className="process-icon">
-                                ✦
+                                <Sparkles />
                             </div>
 
                             <h3>
@@ -425,7 +470,7 @@ export const About = () => {
                             </p>
 
                             <b>
-                                →
+                                <ArrowRight />
                             </b>
 
                         </motion.div>
@@ -443,7 +488,7 @@ export const About = () => {
                             </span>
 
                             <div className="process-icon">
-                                🛒
+                                <ShoppingBag />
                             </div>
 
                             <h3>
@@ -456,7 +501,7 @@ export const About = () => {
                             </p>
 
                             <b>
-                                →
+                                <ArrowRight />
                             </b>
 
                         </motion.div>
@@ -465,8 +510,6 @@ export const About = () => {
 
                 </section>
 
-
-                {/* ================= MISSION ================= */}
 
                 <motion.section
                     className="mission-section"
@@ -504,15 +547,18 @@ export const About = () => {
                         <div className="mission-pills">
 
                             <span>
-                                ✓ Simple
+                                <Check size={14} />
+                                Simple
                             </span>
 
                             <span>
-                                ✓ Useful
+                                <Check size={14} />
+                                Useful
                             </span>
 
                             <span>
-                                ✓ Comfortable
+                                <Check size={14} />
+                                Comfortable
                             </span>
 
                         </div>
@@ -546,15 +592,16 @@ export const About = () => {
                                 repeat: Infinity
                             }}
                         >
-                            ✨
+                            <Sparkles
+                                size={40}
+                                strokeWidth={1.5}
+                            />
                         </motion.div>
 
                     </div>
 
                 </motion.section>
 
-
-                {/* ================= CATEGORIES ================= */}
 
                 <section className="categories-section">
 
@@ -598,16 +645,11 @@ export const About = () => {
                         }}
                     >
 
-                        {[
-                            ["📱", "Electronics", "Technology & gadgets"],
-                            ["👕", "Fashion", "Styles for everyday"],
-                            ["🏠", "Home & Living", "Make your space better"],
-                            ["💎", "Accessories", "Complete your style"]
-                        ].map((item, index) => (
+                        {categories.map((item, index) => (
 
                             <motion.div
                                 className="category-card"
-                                key={item[1]}
+                                key={item.title}
                                 variants={reveal}
                                 whileHover={{
                                     y: -10
@@ -619,19 +661,20 @@ export const About = () => {
                                 </span>
 
                                 <div className="category-icon">
-                                    {item[0]}
+                                    {item.icon}
                                 </div>
 
                                 <h3>
-                                    {item[1]}
+                                    {item.title}
                                 </h3>
 
                                 <p>
-                                    {item[2]}
+                                    {item.description}
                                 </p>
 
                                 <b>
-                                    Explore ↗
+                                    Explore
+                                    <ArrowRight size={15} />
                                 </b>
 
                             </motion.div>
@@ -642,8 +685,6 @@ export const About = () => {
 
                 </section>
 
-
-                {/* ================= VALUES ================= */}
 
                 <section className="values-section">
 
@@ -709,7 +750,7 @@ export const About = () => {
                                 </p>
 
                                 <b>
-                                    ↗
+                                    <ArrowRight size={18} />
                                 </b>
 
                             </motion.div>
@@ -720,8 +761,6 @@ export const About = () => {
 
                 </section>
 
-
-                {/* ================= CTA ================= */}
 
                 <section className="about-cta">
 
@@ -757,14 +796,14 @@ export const About = () => {
                         </h2>
 
                         <p>
-                            Explore Dhula Mart and see what's waiting
+                            Explore NexaMart and see what's waiting
                             for you.
                         </p>
 
                         <Link to="/items">
                             Start Exploring
                             <span>
-                                →
+                                <ArrowRight size={18} />
                             </span>
                         </Link>
 

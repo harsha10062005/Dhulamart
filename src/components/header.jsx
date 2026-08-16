@@ -90,6 +90,30 @@ export const Header = () => {
                 </NavLink>
 
                 <NavLink
+                    to="/Details"
+                    className={({ isActive }) =>
+                        isActive ? "nav-item active" : "nav-item"
+                    }
+                >
+                    {({ isActive }) => (
+                        <>
+                            {isActive && (
+                                <motion.div
+                                    layoutId="nav-slider-pill"
+                                    className="nav-slider"
+                                    transition={{
+                                        type: "spring",
+                                        stiffness: 380,
+                                        damping: 32,
+                                    }}
+                                />
+                            )}
+                            <span className="nav-label">Users</span>
+                        </>
+                    )}
+                </NavLink>
+
+                <NavLink
                     to="/user"
                     className={({ isActive }) =>
                         isActive || isUserActive ? "nav-user active" : "nav-user"
@@ -121,4 +145,4 @@ export const Header = () => {
     );
 };
 
-export default Header;
+export default Header;

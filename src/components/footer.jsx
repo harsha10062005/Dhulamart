@@ -1,19 +1,20 @@
 import { Link } from "react-router-dom";
 import "../css/Footer.css";
+import logo from "../assets/logo.png";
 
 export const Footer = () => {
   return (
     <footer className="dhula-footer">
-
-      {/* ================= TOP FOOTER ================= */}
       <div className="footer-top">
-
         <div className="footer-brand">
           <div className="footer-logo">
-            <span className="footer-logo-icon">🛒</span>
-
+            <img
+              src={logo}
+              alt="NexaMart"
+              className="footer-logo-image"
+            />
             <div>
-              <h2>Dhula Mart</h2>
+              <h2>NexaMart</h2>
               <span>EVERYTHING IN ONE PLACE</span>
             </div>
           </div>
@@ -21,7 +22,7 @@ export const Footer = () => {
           <p>
             Discover a simple and convenient way to shop for the things
             you need. Explore different categories and enjoy a better
-            shopping experience with Dhula Mart.
+            shopping experience with NexaMart.
           </p>
 
           <div className="footer-social">
@@ -33,8 +34,6 @@ export const Footer = () => {
           </div>
         </div>
 
-
-        {/* ================= CATEGORIES ================= */}
         <div className="footer-column">
           <h3>Categories</h3>
           <Link to="/items">Electronics</Link>
@@ -44,8 +43,6 @@ export const Footer = () => {
           <Link to="/items">Groceries</Link>
         </div>
 
-
-        {/* ================= QUICK LINKS ================= */}
         <div className="footer-column">
           <h3>Quick Links</h3>
           <Link to="/">Home</Link>
@@ -55,15 +52,11 @@ export const Footer = () => {
           <Link to="/details">Community Members</Link>
         </div>
 
-
-        {/* ================= CONTACT ================= */}
         <div className="footer-column footer-contact">
-
           <h3>Get In Touch</h3>
 
           <div className="contact-item">
             <span>📍</span>
-
             <p>
               Hyderabad, Telangana
               <br />
@@ -71,43 +64,28 @@ export const Footer = () => {
             </p>
           </div>
 
-
           <div className="contact-item">
             <span>✉</span>
-
-            <p>
-              support@dhulamart.com
-            </p>
+            <p>support@NexaMart.com</p>
           </div>
-
 
           <div className="contact-item">
             <span>☎</span>
-
-            <p>
-              +91 98765 43210
-            </p>
+            <p>+91 98765 43210</p>
           </div>
-
 
           <div className="contact-item">
             <span>◷</span>
-
             <p>
               Mon - Sat
               <br />
               9:00 AM - 8:00 PM
             </p>
           </div>
-
         </div>
-
       </div>
 
-
-      {/* ================= FOOTER MIDDLE ================= */}
       <div className="footer-middle">
-
         <div>
           <strong>🚚 Fast Delivery</strong>
           <span>Reliable delivery experience</span>
@@ -127,16 +105,11 @@ export const Footer = () => {
           <strong>💬 Support</strong>
           <span>We're here when you need us</span>
         </div>
-
       </div>
 
-
-      {/* ================= COPYRIGHT ================= */}
       <div className="footer-bottom">
-
         <p>
-          © {new Date().getFullYear()}{" "}
-          <strong>Dhula Mart</strong>. All Rights Reserved.
+          © {new Date().getFullYear()} <strong>NexaMart</strong>. All Rights Reserved.
         </p>
 
         <div>
@@ -144,9 +117,7 @@ export const Footer = () => {
           <span>Terms</span>
           <span>Cookies</span>
         </div>
-
       </div>
-
     </footer>
   );
 };

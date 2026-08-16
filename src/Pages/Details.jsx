@@ -1,149 +1,228 @@
-import { useState, useEffect } from "react";
 import axios from "axios";
-import { Header } from "../components/header";
-import { Footer } from "../components/footer";
+import { useCallback, useEffect, useMemo, useState } from "react";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "../css/Details.css";
+import Header from "../components/header";
+import { Footer } from "../components/footer";
 
-const fallbackUsers = [
-  { id: 1, name: "Harsh Sharma", age: 24, gender: "Male", email: "harsh@example.com", phone: "+91 9876543210", city: "Delhi", state: "Delhi", country: "India" },
-  { id: 2, name: "Aarav Patel", age: 28, gender: "Male", email: "aarav@example.com", phone: "+91 9876501234", city: "Mumbai", state: "Maharashtra", country: "India" },
-  { id: 3, name: "Priya Singh", age: 22, gender: "Female", email: "priya@example.com", phone: "+91 9123456789", city: "Bengaluru", state: "Karnataka", country: "India" },
-  { id: 4, name: "Ananya Roy", age: 26, gender: "Female", email: "ananya@example.com", phone: "+91 9234567890", city: "Kolkata", state: "West Bengal", country: "India" },
-  { id: 5, name: "Rohan Verma", age: 30, gender: "Male", email: "rohan@example.com", phone: "+91 9345678901", city: "Jaipur", state: "Rajasthan", country: "India" },
-];
+const Users = () => {
+  const [users, setUsers] = useState([]);
+  const [search, setSearch] = useState("");
 
-export const Details = () => {
-  const [users, setUsers] = useState(fallbackUsers);
-  const [selectedUser, setSelectedUser] = useState(fallbackUsers[0]);
+  const [editData, setEditData] = useState({
+    id: "",
+    name: "",
+    email: "",
+    age: "",
+  });
 
   useEffect(() => {
-    async function fetchUsers() {
-      try {
-        const res = await axios.get("https://dummyjson.com/users?limit=10");
-        if (res.data && res.data.users) {
-          const mapped = res.data.users.map((u) => ({
-            id: u.id,
-            name: `${u.firstName} ${u.lastName}`,
-            age: u.age,
-            gender: u.gender,
-            email: u.email,
-            phone: u.phone,
-            city: u.address?.city || "N/A",
-            state: u.address?.state || "N/A",
-            country: "USA",
-          }));
-          setUsers(mapped);
-          setSelectedUser(mapped[0]);
-        }
-      } catch (e) {
-        console.log("Using fallback users", e);
-      }
+    async function usersApi() {
+      const { data } = await axios.get(
+        "https://dummyjson.com/users"
+      );
+
+      setUsers(data.users);
     }
-    fetchUsers();
+
+    usersApi();
+  }, []);
+
+  const filterUsers = useMemo(() => {
+    return users.filter((user) =>
+      user.firstName
+        .toLowerCase()
+        .includes(search.toLowerCase())
+    );
+  }, [search, users]);
+
+  const editUser = useCallback((u) => {
+    setEditData({
+      id: u.id,
+      name: u.firstName,
+      email: u.email,
+      age: u.age,
+    });
+  }, []);
+
+  const handleEditData = useCallback((e) => {
+    const { name, value } = e.target;
+
+    setEditData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  }, []);
+
+  const updateEditedUser = useCallback(async () => {
+    await axios.put(
+      `https://dummyjson.com/users/${editData.id}`,
+      {
+        firstName: editData.name,
+        email: editData.email,
+        age: Number(editData.age),
+      }
+    );
+
+    setUsers((prev) =>
+      prev.map((i) =>
+        i.id === editData.id
+          ? {
+              ...i,
+              firstName: editData.name,
+              email: editData.email,
+              age: Number(editData.age),
+            }
+          : i
+      )
+    );
+  }, [editData]);
+
+  const deleteUser = useCallback(async (id) => {
+    await axios.delete(
+      `https://dummyjson.com/users/${id}`
+    );
+
+    setUsers((prev) =>
+      prev.filter((i) => i.id !== id)
+    );
   }, []);
 
   return (
     <>
       <Header />
 
-      <main className="users-page">
-        <div className="user-container">
+      <div className="users-page">
+        <input
+          type="text"
+          placeholder="Search For Users..."
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+        />
 
-          <div className="user-list">
-            <h2>Community Users</h2>
-            <p className="user-subtitle">
-              Select a member to view their profile
-            </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Id</th>
+              <th>First Name</th>
+              <th>Email</th>
+              <th>Age</th>
+              <th>Edit</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
 
-            <table>
-              <thead>
-                <tr>
-                  <th>Member Name</th>
-                </tr>
-              </thead>
+          <tbody>
+            {filterUsers.map((user) => (
+              <tr key={user.id}>
+                <td>{user.id}</td>
+                <td>{user.firstName}</td>
+                <td>{user.email}</td>
+                <td>{user.age}</td>
 
-              <tbody>
-                {users.map((user) => (
-                  <tr
-                    key={user.id}
-                    className={selectedUser?.id === user.id ? "active-user-row" : ""}
-                    onClick={() => setSelectedUser(user)}
-                    style={{ cursor: "pointer" }}
+                <td>
+                  <button
+                    className="btn btn-warning"
+                    onClick={() => editUser(user)}
+                    type="button"
+                    data-bs-toggle="offcanvas"
+                    data-bs-target="#editUser"
+                    aria-controls="editUser"
                   >
-                    <td>{user.name}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+                    Edit
+                  </button>
+                </td>
+
+                <td>
+                  <button
+                    className="btn btn-danger"
+                    onClick={() => deleteUser(user.id)}
+                    type="button"
+                  >
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+
+        <div
+          className="offcanvas offcanvas-start"
+          data-bs-scroll="true"
+          data-bs-backdrop="false"
+          tabIndex="-1"
+          id="editUser"
+          aria-labelledby="editUserLabel"
+        >
+          <div className="offcanvas-header">
+            <h5
+              className="offcanvas-title"
+              id="editUserLabel"
+            >
+              Edit User
+            </h5>
+
+            <button
+              type="button"
+              className="btn-close"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            />
           </div>
 
-          {/* Right Side */}
-          <div className="user-details">
-            <h2>User Details</h2>
+          <div className="offcanvas-body">
+            <div className="mb-3">
+              <label>Name</label>
 
-            {selectedUser ? (
-              <table>
-                <tbody>
-                  <tr>
-                    <th>ID</th>
-                    <td>#{selectedUser.id}</td>
-                  </tr>
+              <input
+                type="text"
+                className="form-control"
+                name="name"
+                value={editData.name}
+                onChange={handleEditData}
+              />
+            </div>
 
-                  <tr>
-                    <th>Name</th>
-                    <td><strong>{selectedUser.name}</strong></td>
-                  </tr>
+            <div className="mb-3">
+              <label>Email</label>
 
-                  <tr>
-                    <th>Age</th>
-                    <td>{selectedUser.age} years</td>
-                  </tr>
+              <input
+                type="email"
+                className="form-control"
+                name="email"
+                value={editData.email}
+                onChange={handleEditData}
+              />
+            </div>
 
-                  <tr>
-                    <th>Gender</th>
-                    <td>{selectedUser.gender}</td>
-                  </tr>
+            <div className="mb-3">
+              <label>Age</label>
 
-                  <tr>
-                    <th>Email</th>
-                    <td>{selectedUser.email}</td>
-                  </tr>
+              <input
+                type="number"
+                className="form-control"
+                name="age"
+                value={editData.age}
+                onChange={handleEditData}
+              />
+            </div>
 
-                  <tr>
-                    <th>Phone</th>
-                    <td>{selectedUser.phone}</td>
-                  </tr>
-
-                  <tr>
-                    <th>City</th>
-                    <td>{selectedUser.city}</td>
-                  </tr>
-
-                  <tr>
-                    <th>State</th>
-                    <td>{selectedUser.state}</td>
-                  </tr>
-
-                  <tr>
-                    <th>Country</th>
-                    <td>{selectedUser.country}</td>
-                  </tr>
-                </tbody>
-              </table>
-            ) : (
-              <div className="no-user">
-                <h3>No User Selected</h3>
-                <p>Click a user name from the left list.</p>
-              </div>
-            )}
+            <button
+              className="btn btn-primary"
+              type="button"
+              data-bs-dismiss="offcanvas"
+              onClick={updateEditedUser}
+            >
+              Update User
+            </button>
           </div>
-
         </div>
-      </main>
+      </div>
 
       <Footer />
     </>
   );
 };
 
-export default Details;
+export default Users;
