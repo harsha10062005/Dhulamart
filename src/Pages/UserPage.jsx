@@ -11,7 +11,6 @@ export const UserPage = () => {
     return (
 
         <>
-        <Header/>
             <div className="user-page">
             <div className="auth-layout">
                 <div className="toggle-container">

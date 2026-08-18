@@ -1,0 +1,256 @@
+.nexa-loader{
+    position:fixed;
+    inset:0;
+    z-index:99999;
+    width:100%;
+    height:100vh;
+    height:100dvh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+    background:
+        linear-gradient(90deg,rgba(184,101,74,.035) 1px,transparent 1px),
+        linear-gradient(rgba(184,101,74,.035) 1px,transparent 1px),
+        #f7f3eb;
+    background-size:10px 10px;
+}
+
+.nexa-loader::before{
+    content:"";
+    position:absolute;
+    width:430px;
+    height:430px;
+    border:1px solid rgba(184,101,74,.12);
+    border-radius:50%;
+    animation:loaderRotate 18s linear infinite;
+}
+
+.nexa-loader::after{
+    content:"";
+    position:absolute;
+    width:600px;
+    height:600px;
+    border:1px solid rgba(184,101,74,.06);
+    border-radius:50%;
+}
+
+.nexa-loader-content{
+    position:relative;
+    z-index:2;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+    animation:loaderEnter .8s ease forwards;
+}
+
+.nexa-logo-box{
+    position:relative;
+    width:110px;
+    height:110px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-bottom:25px;
+    border-radius:24px;
+    background:rgba(255,253,249,.9);
+    border:1px solid rgba(33,30,27,.1);
+    box-shadow:0 20px 45px rgba(33,30,27,.09),0 0 0 8px rgba(184,101,74,.035);
+    animation:logoFloat 3s ease-in-out infinite;
+}
+
+.nexa-logo-box::before{
+    content:"";
+    position:absolute;
+    inset:-7px;
+    border-radius:30px;
+    border:1px solid rgba(184,101,74,.15);
+    animation:logoBorder 3s ease-in-out infinite;
+}
+
+.nexa-loader-logo{
+    width:72px;
+    height:72px;
+    object-fit:contain;
+    border-radius:14px;
+    filter:drop-shadow(0 8px 15px rgba(184,101,74,.16));
+}
+
+.nexa-loader-brand h1{
+    margin:0;
+    color:#211e1b;
+    font-family:"Inter",-apple-system,BlinkMacSystemFont,sans-serif;
+    font-size:clamp(2rem,5vw,2.7rem);
+    font-weight:800;
+    letter-spacing:-.055em;
+    line-height:1;
+}
+
+.nexa-loader-brand span{
+    display:block;
+    margin-top:9px;
+    color:#9a5039;
+    font-family:"IBM Plex Mono",monospace;
+    font-size:.62rem;
+    font-weight:600;
+    letter-spacing:.18em;
+    line-height:1.4;
+}
+
+.nexa-loader-line{
+    position:relative;
+    width:150px;
+    height:2px;
+    margin-top:28px;
+    overflow:hidden;
+    border-radius:20px;
+    background:rgba(184,101,74,.12);
+}
+
+.nexa-loader-line span{
+    position:absolute;
+    top:0;
+    left:-45%;
+    width:45%;
+    height:100%;
+    border-radius:inherit;
+    background:#b8654a;
+    animation:loaderLine 1.4s ease-in-out infinite;
+}
+
+@keyframes loaderEnter{
+    from{
+        opacity:0;
+        transform:translateY(18px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes logoFloat{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-6px);
+    }
+}
+
+@keyframes logoBorder{
+    0%,100%{
+        transform:scale(1);
+        opacity:.7;
+    }
+    50%{
+        transform:scale(1.04);
+        opacity:1;
+    }
+}
+
+@keyframes loaderRotate{
+    from{
+        transform:rotate(0deg);
+    }
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+@keyframes loaderLine{
+    0%{
+        left:-45%;
+    }
+    50%{
+        left:55%;
+    }
+    100%{
+        left:110%;
+    }
+}
+
+@media(max-width:768px){
+    .nexa-loader::before{
+        width:330px;
+        height:330px;
+    }
+
+    .nexa-loader::after{
+        width:470px;
+        height:470px;
+    }
+
+    .nexa-logo-box{
+        width:95px;
+        height:95px;
+        border-radius:20px;
+    }
+
+    .nexa-loader-logo{
+        width:62px;
+        height:62px;
+    }
+
+    .nexa-loader-brand span{
+        font-size:.55rem;
+        letter-spacing:.14em;
+    }
+
+    .nexa-loader-line{
+        width:130px;
+        margin-top:24px;
+    }
+}
+
+@media(max-width:480px){
+    .nexa-loader::before{
+        width:250px;
+        height:250px;
+    }
+
+    .nexa-loader::after{
+        width:360px;
+        height:360px;
+    }
+
+    .nexa-logo-box{
+        width:85px;
+        height:85px;
+        margin-bottom:20px;
+        border-radius:18px;
+    }
+
+    .nexa-loader-logo{
+        width:55px;
+        height:55px;
+    }
+
+    .nexa-loader-brand h1{
+        font-size:2rem;
+    }
+
+    .nexa-loader-brand span{
+        font-size:.48rem;
+        letter-spacing:.11em;
+    }
+
+    .nexa-loader-line{
+        width:110px;
+        margin-top:21px;
+    }
+}
+
+@media(prefers-reduced-motion:reduce){
+    .nexa-loader::before,
+    .nexa-logo-box,
+    .nexa-logo-box::before,
+    .nexa-loader-line span{
+        animation:none;
+    }
+
+    .nexa-loader-content{
+        animation:none;
+    }
+}
